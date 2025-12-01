@@ -1,17 +1,1 @@
-# Smart Log Analyzer - Requirements
-# Python 3.8+
-
-# Core dependencies
-# Add your dependencies here as the project grows
-
-# Testing
-pytest>=7.0.0
-pytest-cov>=4.0.0
-
-# Code quality
-pylint>=2.15.0
-black>=22.0.0
-flake8>=5.0.0
-
-# Development
-python-dotenv>=0.19.0
+pydantic>=2.0.0
