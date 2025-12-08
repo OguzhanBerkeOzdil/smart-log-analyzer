@@ -23,5 +23,5 @@ def group_errors(logs: list[LogEntry]) -> list[ErrorGroup]:
 def slow_requests(logs: list[LogEntry], limit: int = 10) -> list[LogEntry]:
     """Return the slowest requests by duration_ms."""
     with_duration = [entry for entry in logs if entry.duration_ms is not None]
-    with_duration.sort(key=lambda e: e.duration_ms, reverse=True)
+    with_duration.sort(key=lambda e: e.duration_ms or 0, reverse=True)
     return with_duration[:limit]
