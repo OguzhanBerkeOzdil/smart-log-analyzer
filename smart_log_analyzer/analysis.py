@@ -1,21 +1,22 @@
 from collections import defaultdict
+from typing import Dict, Tuple
 from .models import LogEntry, ErrorGroup
 
 
 def group_errors(logs: list[LogEntry]) -> list[ErrorGroup]:
     """Group error entries by service and message, return sorted by count."""
-    counts = defaultdict(int)
-    
+    counts = defaultdict(int) # type: Dict[Tuple[str, str], int]
+
     for entry in logs:
         if entry.level == "ERROR":
             key = (entry.service, entry.message)
             counts[key] += 1
-    
+
     groups = [
         ErrorGroup(service=service, message=message, count=count)
         for (service, message), count in counts.items()
     ]
-    
+
     groups.sort(key=lambda g: g.count, reverse=True)
     return groups
 
