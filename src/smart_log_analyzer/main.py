@@ -4,6 +4,7 @@ from pathlib import Path
 from .core.controller import run_analysis
 from .io.ai_insight import get_error_explanation
 
+
 def get_parser_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Smart Log Analyzer")
     parser.add_argument("path", type=Path, help="Path to JSONL log file")

@@ -1,6 +1,7 @@
 import os
-import google.generativeai as genai
 from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 from ..core.models import ErrorGroup
 
 load_dotenv()
@@ -10,25 +11,39 @@ def get_error_explanation(error: ErrorGroup) -> str:
     """
     Sends the error message to Google Gemini to get a debugging tip.
     """
-    api_key = os.getenv("GEMINI_API_KEY")
 
-    if not api_key:
+    API_KEY = os.getenv("GEMINI_API_KEY")  # inside function to allow mocking in tests
+    MODEL = "gemini-2.5-flash"
+
+    if not API_KEY:
         return "(!) AI features disabled: GEMINI_API_KEY not found in environment variables."
 
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        client = genai.Client(api_key=API_KEY)
 
-        prompt = (
-            f"I am a software engineer analyzing logs. "
-            f"I found this error occurring {error.count} times in the service '{error.service}':\n\n"
-            f'Error Message: "{error.message}"\n\n'
-            f"Explain what this error typically means and suggest 2 common ways to fix it. "
-            f"Keep it short (max 3 sentences)."
+        prompt = f"""
+            I am a software engineer analyzing logs.
+            I found this error occurring {error.count} times in the service '{error.service}':\n\n
+            Error Message: "{error.message}"\n\n
+            Explain what this error typically means and suggest 2 common ways to fix it.
+            Keep it short (max 3 sentences).
+        """
+
+        system_instruction = f"""
+            You are an expert software engineer specializing in log analysis and debugging.
+            Provide concise, clear explanations and practical troubleshooting steps.
+        """
+
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_instruction,
+                temperature=0.2,
+            ),
         )
 
-        response = model.generate_content(prompt)
-        return str(response.text.strip())
+        return str(response.text)
 
     except Exception as e:
         return f"(!) Failed to get AI insight: {e}"
