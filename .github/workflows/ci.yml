@@ -20,12 +20,12 @@ jobs:
       - name: Install uv
         run: astral-sh/setup-uv@v3
         with:
-          version: latest
+          version: "latest"
 
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Install dependencies
         run: uv sync --all extras --dev
