@@ -1,4 +1,4 @@
-from .models import LogEntry, ErrorGroup
+from ..core.models import LogEntry, ErrorGroup
 
 
 def format_report(error_groups: list[ErrorGroup], slow_reqs: list[LogEntry]) -> str:

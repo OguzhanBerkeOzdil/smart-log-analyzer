@@ -12,7 +12,6 @@ else:
     genai.configure(api_key=api_key)
     print("Checking available models for your API key...\n")
     try:
-        # List all models that support content generation
         for m in genai.list_models():
             if "generateContent" in m.supported_generation_methods:
                 print(f" - {m.name}")
