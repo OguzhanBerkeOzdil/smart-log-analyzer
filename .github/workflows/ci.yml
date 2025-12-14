@@ -1,0 +1,41 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - 'dev-*'
+  pull_request:
+    branches:
+      - main
+      - 'dev-*'
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Check formatting (Black)
+        run: uv run black --check .
+
+      - name: Check Types (MyPy)
+        run: uv run mypy .
+
+      - name: Check Types (Pyright)
+        run: uv run pyright
+
+      - name: Run Tests
+        run: uv run pytest -v
