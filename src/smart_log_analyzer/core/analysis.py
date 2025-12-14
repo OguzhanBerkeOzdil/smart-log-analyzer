@@ -7,7 +7,7 @@ def group_errors(logs: list[LogEntry]) -> list[ErrorGroup]:
     """
     Group error entries by service and message, return sorted by count.
     """
-    counts = defaultdict(int) # type: Dict[Tuple[str, str], int]
+    counts = defaultdict(int)  # type: Dict[Tuple[str, str], int]
 
     for entry in logs:
         if entry.level == "ERROR":
