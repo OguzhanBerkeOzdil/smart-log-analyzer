@@ -5,14 +5,14 @@ from ..core.models import ErrorGroup
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
-MODEL = "gemini-2.5-flash"
-
 
 def get_error_explanation(error: ErrorGroup) -> str:
     """
     Sends the error message to Google Gemini to get a debugging tip.
     """
+
+    API_KEY = os.getenv("GEMINI_API_KEY") # inside function to allow mocking in tests
+    MODEL = "gemini-2.5-flash"
 
     if not API_KEY:
         return "(!) AI features disabled: GEMINI_API_KEY not found in environment variables."
