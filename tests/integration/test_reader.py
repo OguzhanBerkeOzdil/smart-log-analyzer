@@ -37,7 +37,9 @@ def test_read_valid_log_file(tmp_path: Path) -> None:
     assert entries[1].level == "ERROR"
 
 
-def test_read_skips_malformed_lines(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+def test_read_skips_malformed_lines(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
     """Ensures reader doesn't crash on bad JSON."""
     log_file = tmp_path / "bad.jsonl"
     with open(log_file, "w") as f:
