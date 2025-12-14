@@ -1,13 +1,10 @@
 import argparse
 import sys
 from pathlib import Path
-from .reader import read_log_file
-from .analysis import group_errors, slow_requests
-from .report import format_report
-from .ai_insight import get_error_explanation
+from .core.controller import run_analysis
+from .io.ai_insight import get_error_explanation
 
-
-def main() -> None:
+def get_parser_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Smart Log Analyzer")
     parser.add_argument("path", type=Path, help="Path to JSONL log file")
     parser.add_argument(
@@ -16,14 +13,14 @@ def main() -> None:
     parser.add_argument(
         "--ai", action="store_true", help="Ask AI to explain the top error"
     )
+    return parser.parse_args()
 
-    args = parser.parse_args()
 
-    logs = read_log_file(args.path)
-    error_groups = group_errors(logs)
-    slow_reqs = slow_requests(logs, limit=args.limit)
+def main() -> None:
+    args = get_parser_args()
 
-    report = format_report(error_groups, slow_reqs)
+    report, error_groups = run_analysis(args.path, limit=args.limit)
+
     print(report)
 
     if args.ai:

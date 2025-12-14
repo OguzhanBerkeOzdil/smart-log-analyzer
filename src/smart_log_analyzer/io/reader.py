@@ -2,7 +2,7 @@ import json
 import sys
 from pathlib import Path
 from pydantic import ValidationError
-from .models import LogEntry
+from ..core.models import LogEntry
 
 
 def read_log_file(path: Path) -> list[LogEntry]:

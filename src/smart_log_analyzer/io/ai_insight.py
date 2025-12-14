@@ -1,7 +1,7 @@
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
-from .models import ErrorGroup
+from ..core.models import ErrorGroup
 
 load_dotenv()
 

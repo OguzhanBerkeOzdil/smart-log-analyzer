@@ -4,7 +4,9 @@ from .models import LogEntry, ErrorGroup
 
 
 def group_errors(logs: list[LogEntry]) -> list[ErrorGroup]:
-    """Group error entries by service and message, return sorted by count."""
+    """
+    Group error entries by service and message, return sorted by count.
+    """
     counts = defaultdict(int) # type: Dict[Tuple[str, str], int]
 
     for entry in logs:
@@ -22,7 +24,9 @@ def group_errors(logs: list[LogEntry]) -> list[ErrorGroup]:
 
 
 def slow_requests(logs: list[LogEntry], limit: int = 10) -> list[LogEntry]:
-    """Return the slowest requests by duration_ms."""
+    """
+    Return the slowest requests by duration_ms.
+    """
     with_duration = [entry for entry in logs if entry.duration_ms is not None]
     with_duration.sort(key=lambda e: e.duration_ms or 0, reverse=True)
     return with_duration[:limit]
