@@ -29,7 +29,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Check formatting (Black)
-        run: uv run black --check
+        run: uv run black --check .
 
       - name: Check Types (MyPy)
         run: uv run mypy .
