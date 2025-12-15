@@ -29,7 +29,7 @@ def test_read_valid_log_file(tmp_path: Path) -> None:
         for entry in log_data:
             f.write(json.dumps(entry) + "\n")
 
-    entries = read_log_file(log_file)
+    entries = list(read_log_file(log_file))
 
     assert len(entries) == 2
     assert entries[0].service == "test"
@@ -47,7 +47,7 @@ def test_read_skips_malformed_lines(
         f.write("THIS IS NOT JSON\n")  # Syntax error
         f.write("\n")  # Empty line
 
-    entries = read_log_file(log_file)
+    entries = list(read_log_file(log_file))
 
     # Should skip both invalid lines and return empty list (or handle as needed)
     # Since our model requires fields like 'timestamp', the first line fails validation.
