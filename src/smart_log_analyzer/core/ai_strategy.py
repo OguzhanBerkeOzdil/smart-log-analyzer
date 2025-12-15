@@ -22,8 +22,9 @@ class AIAnalyzer(AnalyzerStrategy):
         # 1. Identify the top error (reusing logic or relying on pre-calc could be better,
         # but for independence we calculate it here briefly)
         from collections import defaultdict
+        from typing import Tuple
 
-        counts = defaultdict(int)
+        counts: Dict[Tuple[str, str], int] = defaultdict(int)
         for entry in logs:
             if entry.level == "ERROR":
                 counts[(entry.service, entry.message)] += 1

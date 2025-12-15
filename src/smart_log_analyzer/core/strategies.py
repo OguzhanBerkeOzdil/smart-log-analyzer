@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from .models import LogEntry, ErrorGroup
 from .interfaces import AnalyzerStrategy
 
@@ -14,7 +14,7 @@ class ErrorAnalyzer(AnalyzerStrategy):
         return "Error Analysis"
 
     def analyze(self, logs: List[LogEntry]) -> Dict[str, Any]:
-        counts = defaultdict(int)
+        counts: Dict[Tuple[str, str], int] = defaultdict(int)
 
         for entry in logs:
             if entry.level == "ERROR":
