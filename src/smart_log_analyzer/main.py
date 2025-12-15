@@ -1,41 +1,47 @@
+import asyncio
 import argparse
-import sys
 from pathlib import Path
-from .core.controller import run_analysis
-from .io.ai_insight import get_error_explanation
-
+from .core.engine import AnalysisEngine
+from .utils.generator import LogGenerator
+from .io.report import ConsoleReporter
 
 def get_parser_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Smart Log Analyzer")
-    parser.add_argument("path", type=Path, help="Path to JSONL log file")
-    parser.add_argument(
-        "--limit", type=int, default=10, help="Number of slow requests to show"
-    )
-    parser.add_argument(
-        "--ai", action="store_true", help="Ask AI to explain the top error"
-    )
+    parser = argparse.ArgumentParser(description="Smart Log Analyzer (Async & Modular)")
+    parser.add_argument("path", type=Path, nargs="?", help="Path to JSONL log file")
+    parser.add_argument("--generate", action="store_true", help="Generate synthetic logs")
+    parser.add_argument("--count", type=int, default=1000, help="Number of logs to generate")
+    parser.add_argument("--output", type=Path, default=Path("data/synthetic_logs.jsonl"), help="Output path for generated logs")
+    parser.add_argument("--ai", action="store_true", help="Enable AI insights")
     return parser.parse_args()
 
-
-def main() -> None:
+async def async_main() -> None:
     args = get_parser_args()
 
-    report, error_groups = run_analysis(args.path, limit=args.limit)
+    # 1. Generate Logs if requested
+    if args.generate:
+        generator = LogGenerator(args.output, count=args.count)
+        generator.generate()
+        if not args.path:
+            args.path = args.output
 
-    print(report)
+    if not args.path:
+        print("Error: No log file provided and --generate not used.")
+        print("Usage: python -m smart_log_analyzer.main <path_to_logs> OR --generate")
+        return
 
-    if args.ai:
-        print("\nAsking AI for insights on the top error...")
-        if not error_groups:
-            print("No errors found to analyze.")
-        else:
-            top_error = error_groups[0]
-            explanation = get_error_explanation(top_error)
-            print("-" * 50)
-            print(f"AI Insight for: {top_error.message}")
-            print(explanation)
-            print("-" * 50)
+    # 2. Run Analysis Engine
+    engine = AnalysisEngine(enable_ai=args.ai)
+    results = await engine.run(args.path)
 
+    # 3. Report Results
+    reporter = ConsoleReporter()
+    reporter.report(results)
+
+def main() -> None:
+    try:
+        asyncio.run(async_main())
+    except KeyboardInterrupt:
+        print("\nAnalysis interrupted by user.")
 
 if __name__ == "__main__":
     main()
