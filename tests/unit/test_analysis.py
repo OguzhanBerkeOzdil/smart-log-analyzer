@@ -42,4 +42,3 @@ def test_slow_requests_limit(sample_logs: list[LogEntry]) -> None:
     assert len(slow) <= 10
     if len(slow) > 0:
         assert slow[0].duration_ms == 5000
-
