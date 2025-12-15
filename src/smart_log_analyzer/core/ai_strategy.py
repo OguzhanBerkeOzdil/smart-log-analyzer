@@ -8,24 +8,26 @@ from .interfaces import AnalyzerStrategy
 
 load_dotenv()
 
+
 class AIAnalyzer(AnalyzerStrategy):
     """
     Uses Google Gemini to provide insights on the most frequent error.
     """
-    
+
     @property
     def name(self) -> str:
         return "AI Insight Analysis"
 
     def analyze(self, logs: List[LogEntry]) -> Dict[str, Any]:
-        # 1. Identify the top error (reusing logic or relying on pre-calc could be better, 
+        # 1. Identify the top error (reusing logic or relying on pre-calc could be better,
         # but for independence we calculate it here briefly)
         from collections import defaultdict
+
         counts = defaultdict(int)
         for entry in logs:
             if entry.level == "ERROR":
                 counts[(entry.service, entry.message)] += 1
-        
+
         if not counts:
             return {"ai_insight": "No errors found to analyze."}
 
@@ -35,15 +37,12 @@ class AIAnalyzer(AnalyzerStrategy):
 
         # 2. Ask AI
         insight = self._get_error_explanation(top_error)
-        
-        return {
-            "top_error_analyzed": top_error,
-            "ai_insight": insight
-        }
+
+        return {"top_error_analyzed": top_error, "ai_insight": insight}
 
     def _get_error_explanation(self, error: ErrorGroup) -> str:
         API_KEY = os.getenv("GEMINI_API_KEY")
-        MODEL = "gemini-2.0-flash" # Updated to latest efficient model
+        MODEL = "gemini-2.0-flash"  # Updated to latest efficient model
 
         if not API_KEY:
             return "(!) AI features disabled: GEMINI_API_KEY not found."

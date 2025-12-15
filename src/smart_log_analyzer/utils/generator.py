@@ -7,11 +7,13 @@ from pathlib import Path
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
+
 class LogLevel(str, Enum):
     INFO = "INFO"
     WARNING = "WARNING"
     ERROR = "ERROR"
     DEBUG = "DEBUG"
+
 
 class ServiceName(str, Enum):
     AUTH_SERVICE = "auth-service"
@@ -20,10 +22,12 @@ class ServiceName(str, Enum):
     INVENTORY_SERVICE = "inventory-service"
     API_GATEWAY = "api-gateway"
 
+
 class LogSchema(BaseModel):
     """
     Represents the structure of a generated log entry.
     """
+
     timestamp: str
     level: LogLevel
     service: ServiceName
@@ -31,6 +35,7 @@ class LogSchema(BaseModel):
     request_id: str
     duration_ms: Optional[int] = None
     user_id: Optional[int] = None
+
 
 class LogGenerator:
     """
@@ -42,7 +47,7 @@ class LogGenerator:
         self.output_path = output_path
         self.count = count
         self.fake_users = [random.randint(1000, 9999) for _ in range(50)]
-        
+
         # Define common messages per service to ensure consistency
         self.service_messages = {
             ServiceName.AUTH_SERVICE: [
@@ -71,7 +76,7 @@ class LogGenerator:
                 ("Request routed", LogLevel.INFO),
                 ("Rate limit exceeded", LogLevel.WARNING),
                 ("Service unavailable", LogLevel.ERROR),
-            ]
+            ],
         }
 
     def _generate_request_id(self) -> str:
@@ -89,12 +94,12 @@ class LogGenerator:
         Generates logs and writes them to the specified file in JSONL format.
         """
         print(f"Generating {self.count} logs to {self.output_path}...")
-        
+
         with open(self.output_path, "w", encoding="utf-8") as f:
             for _ in range(self.count):
                 service = random.choice(list(ServiceName))
                 message_template, level = random.choice(self.service_messages[service])
-                
+
                 # Simulate performance issues: 5% chance of very slow request
                 duration = random.randint(10, 200)
                 if random.random() < 0.05:
@@ -112,12 +117,17 @@ class LogGenerator:
                     message=message_template,
                     request_id=self._generate_request_id(),
                     duration_ms=duration,
-                    user_id=random.choice(self.fake_users) if random.random() > 0.2 else None
+                    user_id=(
+                        random.choice(self.fake_users)
+                        if random.random() > 0.2
+                        else None
+                    ),
                 )
 
                 f.write(log_entry.model_dump_json() + "\n")
-        
+
         print("Generation complete.")
+
 
 if __name__ == "__main__":
     # Quick test run

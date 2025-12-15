@@ -2,12 +2,13 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 from .models import LogEntry
 
+
 class AnalyzerStrategy(ABC):
     """
     Abstract Base Class for all analysis strategies.
     Follows the Strategy Pattern to allow pluggable analysis modules.
     """
-    
+
     @property
     @abstractmethod
     def name(self) -> str:
