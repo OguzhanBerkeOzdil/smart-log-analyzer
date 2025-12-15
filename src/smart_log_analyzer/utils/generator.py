@@ -1,11 +1,9 @@
-import json
 import random
-import time
 from datetime import datetime, timedelta, timezone
 from enum import Enum
 from pathlib import Path
-from typing import List, Optional
-from pydantic import BaseModel, Field
+from typing import Optional
+from pydantic import BaseModel
 
 
 class LogLevel(str, Enum):
