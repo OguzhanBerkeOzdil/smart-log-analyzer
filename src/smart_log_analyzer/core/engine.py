@@ -32,7 +32,7 @@ class AnalysisEngine:
 
     async def run(self, file_path: Path) -> Dict[str, AnalysisResult]:
         print(f"Reading logs from {file_path}...")
-        logs = await AsyncLogReader.read_file(file_path)
+        logs = [entry async for entry in AsyncLogReader.read_file(file_path)]
         print(f"Successfully read {len(logs)} log entries.")
 
         results: Dict[str, AnalysisResult] = {}

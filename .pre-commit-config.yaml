@@ -20,7 +20,13 @@ repos:
     rev: v1.9.0
     hooks:
       - id: mypy
-        additional_dependencies: [types-requests, pydantic]
+        additional_dependencies: [
+          types-requests,
+          pydantic,
+          types-aiofiles,
+          pytest,
+          pytest-asyncio
+        ]
 
   # 4. Pyright
   - repo: local

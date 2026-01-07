@@ -20,13 +20,17 @@ dev = [
     "pyright>=1.1.407",
     "pytest>=9.0.2",
     "types-aiofiles>=24.1.0",
-    "pytest-asyncio"
+    "pytest-asyncio",
 ]
 
 [tool.mypy]
 strict = true
 python_version = "3.12"
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_decorators = false
 
 [tool.black]
 line-length = 88

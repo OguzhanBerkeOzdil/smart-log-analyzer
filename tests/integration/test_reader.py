@@ -33,7 +33,7 @@ async def test_read_valid_log_file(tmp_path: Path) -> None:
             f.write(json.dumps(entry) + "\n")
 
     # Act
-    entries = await AsyncLogReader.read_file(log_file)
+    entries = [entry async for entry in AsyncLogReader.read_file(log_file)]
 
     # Assert
     assert len(entries) == 2
@@ -56,7 +56,7 @@ async def test_read_skips_malformed_lines(tmp_path: Path) -> None:
         f.write("\n")  # Empty line
 
     # Act
-    entries = await AsyncLogReader.read_file(log_file)
+    entries = [entry async for entry in AsyncLogReader.read_file(log_file)]
 
     # Assert
     assert len(entries) == 0
