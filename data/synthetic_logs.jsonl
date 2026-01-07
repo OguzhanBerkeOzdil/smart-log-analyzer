@@ -1,0 +1,50 @@
+{"timestamp":"2025-12-15T07:49:10.246071+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-598367","duration_ms":159,"user_id":null}
+{"timestamp":"2025-12-15T03:14:10.246071+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-211862","duration_ms":68,"user_id":8002}
+{"timestamp":"2025-12-15T06:55:10.246071+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials","request_id":"req-115141","duration_ms":43,"user_id":3183}
+{"timestamp":"2025-12-14T14:26:10.246071+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds","request_id":"req-888545","duration_ms":46,"user_id":6013}
+{"timestamp":"2025-12-15T02:54:10.246071+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-682388","duration_ms":12,"user_id":null}
+{"timestamp":"2025-12-14T21:16:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-618083","duration_ms":47,"user_id":null}
+{"timestamp":"2025-12-14T14:01:10.246071+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-771956","duration_ms":191,"user_id":2515}
+{"timestamp":"2025-12-15T04:47:10.246071+00:00","level":"ERROR","service":"inventory-service","message":"Unexpected error in ServiceName.INVENTORY_SERVICE","request_id":"req-677274","duration_ms":150,"user_id":4615}
+{"timestamp":"2025-12-15T10:43:10.246071+00:00","level":"ERROR","service":"auth-service","message":"Unexpected error in ServiceName.AUTH_SERVICE","request_id":"req-740515","duration_ms":2372,"user_id":3733}
+{"timestamp":"2025-12-15T06:20:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-773744","duration_ms":101,"user_id":9754}
+{"timestamp":"2025-12-15T01:12:10.246071+00:00","level":"ERROR","service":"payment-service","message":"Unexpected error in ServiceName.PAYMENT_SERVICE","request_id":"req-447084","duration_ms":68,"user_id":3632}
+{"timestamp":"2025-12-15T01:14:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-104278","duration_ms":166,"user_id":8359}
+{"timestamp":"2025-12-15T07:48:10.246071+00:00","level":"ERROR","service":"api-gateway","message":"Unexpected error in ServiceName.API_GATEWAY","request_id":"req-754340","duration_ms":122,"user_id":7601}
+{"timestamp":"2025-12-14T14:56:10.246071+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-263526","duration_ms":92,"user_id":1399}
+{"timestamp":"2025-12-15T06:17:10.246071+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-117247","duration_ms":41,"user_id":5417}
+{"timestamp":"2025-12-14T13:05:10.246071+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable","request_id":"req-203505","duration_ms":116,"user_id":null}
+{"timestamp":"2025-12-15T06:56:10.246071+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-404434","duration_ms":12,"user_id":3733}
+{"timestamp":"2025-12-14T13:41:10.246071+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-405965","duration_ms":116,"user_id":3155}
+{"timestamp":"2025-12-15T08:24:10.246071+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-639968","duration_ms":85,"user_id":8459}
+{"timestamp":"2025-12-14T16:18:10.246071+00:00","level":"ERROR","service":"payment-service","message":"Unexpected error in ServiceName.PAYMENT_SERVICE","request_id":"req-869248","duration_ms":2974,"user_id":6773}
+{"timestamp":"2025-12-14T19:12:10.246071+00:00","level":"ERROR","service":"inventory-service","message":"Unexpected error in ServiceName.INVENTORY_SERVICE","request_id":"req-949478","duration_ms":39,"user_id":8406}
+{"timestamp":"2025-12-14T17:41:10.246071+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-612125","duration_ms":97,"user_id":2040}
+{"timestamp":"2025-12-15T10:43:10.246071+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-987243","duration_ms":51,"user_id":8239}
+{"timestamp":"2025-12-14T17:33:10.246071+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds","request_id":"req-521236","duration_ms":31,"user_id":null}
+{"timestamp":"2025-12-14T18:51:10.246071+00:00","level":"ERROR","service":"inventory-service","message":"Unexpected error in ServiceName.INVENTORY_SERVICE","request_id":"req-954689","duration_ms":104,"user_id":6044}
+{"timestamp":"2025-12-15T07:33:10.246071+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed","request_id":"req-890243","duration_ms":92,"user_id":4902}
+{"timestamp":"2025-12-15T12:13:10.246071+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed","request_id":"req-223045","duration_ms":50,"user_id":9507}
+{"timestamp":"2025-12-14T22:54:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-340471","duration_ms":178,"user_id":8002}
+{"timestamp":"2025-12-15T07:36:10.246071+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed","request_id":"req-402095","duration_ms":185,"user_id":8359}
+{"timestamp":"2025-12-14T17:33:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-797144","duration_ms":99,"user_id":4902}
+{"timestamp":"2025-12-15T12:03:10.246071+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-157987","duration_ms":197,"user_id":null}
+{"timestamp":"2025-12-15T12:50:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-156798","duration_ms":37,"user_id":1497}
+{"timestamp":"2025-12-15T10:04:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-363660","duration_ms":2895,"user_id":null}
+{"timestamp":"2025-12-15T10:10:10.246071+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-161343","duration_ms":4659,"user_id":null}
+{"timestamp":"2025-12-15T08:02:10.246071+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-602531","duration_ms":67,"user_id":null}
+{"timestamp":"2025-12-14T15:49:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-516257","duration_ms":131,"user_id":8245}
+{"timestamp":"2025-12-14T22:46:10.246071+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed","request_id":"req-986606","duration_ms":165,"user_id":2040}
+{"timestamp":"2025-12-14T18:09:10.246071+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-590421","duration_ms":91,"user_id":8245}
+{"timestamp":"2025-12-15T03:03:10.246071+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-184516","duration_ms":136,"user_id":6406}
+{"timestamp":"2025-12-15T01:23:10.246071+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-551846","duration_ms":167,"user_id":6800}
+{"timestamp":"2025-12-15T00:44:10.246071+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable","request_id":"req-686490","duration_ms":137,"user_id":7032}
+{"timestamp":"2025-12-14T23:01:10.246071+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-184536","duration_ms":1555,"user_id":4865}
+{"timestamp":"2025-12-14T21:30:10.246071+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-434025","duration_ms":186,"user_id":6417}
+{"timestamp":"2025-12-15T01:23:10.246071+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout","request_id":"req-177636","duration_ms":59,"user_id":2040}
+{"timestamp":"2025-12-15T11:43:10.246071+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed","request_id":"req-727665","duration_ms":149,"user_id":5692}
+{"timestamp":"2025-12-14T17:00:10.246071+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed","request_id":"req-401453","duration_ms":119,"user_id":6986}
+{"timestamp":"2025-12-15T05:13:10.246071+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-556295","duration_ms":72,"user_id":3839}
+{"timestamp":"2025-12-14T14:31:10.246071+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-567427","duration_ms":124,"user_id":2040}
+{"timestamp":"2025-12-15T04:07:10.246071+00:00","level":"ERROR","service":"user-service","message":"Unexpected error in ServiceName.USER_SERVICE","request_id":"req-897779","duration_ms":14,"user_id":3155}
+{"timestamp":"2025-12-15T07:45:10.246071+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-747584","duration_ms":2154,"user_id":7679}
