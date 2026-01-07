@@ -1,45 +1,57 @@
 import os
-from typing import List, Dict, Any
+from typing import List
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
-from .models import LogEntry, ErrorGroup
+from .models import LogEntry, ErrorGroup, AIAnalysisResult, ErrorAnalysisResult
 from .interfaces import AnalyzerStrategy
+
 
 load_dotenv()
 
 
-class AIAnalyzer(AnalyzerStrategy):
+class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
     """
     Uses Google Gemini to provide insights on the most frequent error.
+    
+    NOTE:
+    This analyzer is intentionally NOT designed to work on raw log entries.
+    It depends on the output of ErrorAnalyzer and must be executed after it.
+
+    The analyze() method is implemented only to satisfy the AnalyzerStrategy
+    interface contract and to prevent accidental misuse at runtime.
     """
 
     @property
     def name(self) -> str:
         return "AI Insight Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> Dict[str, Any]:
-        # 1. Identify the top error (reusing logic or relying on pre-calc could be better,
-        # but for independence we calculate it here briefly)
-        from collections import defaultdict
-        from typing import Tuple
+    def analyze(self, logs: List[LogEntry]) -> AIAnalysisResult:
+        raise RuntimeError(
+            "AIAnalyzer cannot analyze raw logs. "
+            "It must be run after ErrorAnalyzer."
+        )
 
-        counts: Dict[Tuple[str, str], int] = defaultdict(int)
-        for entry in logs:
-            if entry.level == "ERROR":
-                counts[(entry.service, entry.message)] += 1
+    def analyze_from_error_result(
+        self,
+        error_result: ErrorAnalysisResult,
+        ) -> AIAnalysisResult:
 
-        if not counts:
-            return {"ai_insight": "No errors found to analyze."}
+        if not error_result["top_errors"]:
+            return {
+                "kind": "ai",
+                "top_error": None,
+                "insight": "No errors found to analyze.",
+            }
 
-        # Get top error
-        (service, message), count = max(counts.items(), key=lambda x: x[1])
-        top_error = ErrorGroup(service=service, message=message, count=count)
-
-        # 2. Ask AI
+        top_error = error_result["top_errors"][0]
         insight = self._get_error_explanation(top_error)
 
-        return {"top_error_analyzed": top_error, "ai_insight": insight}
+        return {
+            "kind": "ai",
+            "top_error": top_error,
+            "insight": insight,
+        }
 
     def _get_error_explanation(self, error: ErrorGroup) -> str:
         API_KEY = os.getenv("GEMINI_API_KEY")

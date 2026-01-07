@@ -1,10 +1,10 @@
 from collections import defaultdict
 from typing import List, Dict, Any, Tuple
-from .models import LogEntry, ErrorGroup
+from .models import LogEntry, ErrorGroup, ErrorAnalysisResult, PerformanceAnalysisResult
 from .interfaces import AnalyzerStrategy
 
 
-class ErrorAnalyzer(AnalyzerStrategy):
+class ErrorAnalyzer(AnalyzerStrategy[ErrorAnalysisResult]):
     """
     Analyzes logs to group and count errors.
     """
@@ -13,7 +13,7 @@ class ErrorAnalyzer(AnalyzerStrategy):
     def name(self) -> str:
         return "Error Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> Dict[str, Any]:
+    def analyze(self, logs: List[LogEntry]) -> ErrorAnalysisResult:
         counts: Dict[Tuple[str, str], int] = defaultdict(int)
 
         for entry in logs:
@@ -30,13 +30,14 @@ class ErrorAnalyzer(AnalyzerStrategy):
         groups.sort(key=lambda g: g.count, reverse=True)
 
         return {
+            "kind": "error",
             "total_errors": sum(g.count for g in groups),
             "unique_errors": len(groups),
             "top_errors": groups,
         }
 
 
-class PerformanceAnalyzer(AnalyzerStrategy):
+class PerformanceAnalyzer(AnalyzerStrategy[PerformanceAnalysisResult]):
     """
     Analyzes logs to find slow requests and performance anomalies.
     """
@@ -45,11 +46,16 @@ class PerformanceAnalyzer(AnalyzerStrategy):
     def name(self) -> str:
         return "Performance Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> Dict[str, Any]:
+    def analyze(self, logs: List[LogEntry]) -> PerformanceAnalysisResult:
         with_duration = [e for e in logs if e.duration_ms is not None]
 
         if not with_duration:
-            return {"slowest_requests": [], "average_duration": 0}
+            return {
+                "kind": "performance",
+                "average_duration_ms": 0.0,
+                "total_requests_with_duration": 0,
+                "slowest_requests": [],
+            }
 
         # Sort by duration descending
         with_duration.sort(key=lambda e: e.duration_ms or 0, reverse=True)
@@ -58,6 +64,7 @@ class PerformanceAnalyzer(AnalyzerStrategy):
         avg_duration = total_duration / len(with_duration)
 
         return {
+            "kind": "performance",
             "slowest_requests": with_duration[:10],
             "average_duration_ms": round(avg_duration, 2),
             "total_requests_with_duration": len(with_duration),

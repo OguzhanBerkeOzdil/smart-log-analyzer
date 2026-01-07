@@ -27,26 +27,23 @@ def get_parser_args() -> argparse.Namespace:
 
 async def async_main() -> None:
     args = get_parser_args()
+    path = args.path
 
     # 1. Generate Logs if requested
     if args.generate:
-        generator = LogGenerator(args.output, count=args.count)
-        generator.generate()
-        if not args.path:
-            args.path = args.output
+        LogGenerator(args.output, count=args.count).generate()
+        path = path or args.output
 
-    if not args.path:
+    if not path:
         print("Error: No log file provided and --generate not used.")
         print("Usage: python -m smart_log_analyzer.main <path_to_logs> OR --generate")
         return
 
     # 2. Run Analysis Engine
-    engine = AnalysisEngine(enable_ai=args.ai)
-    results = await engine.run(args.path)
+    results = await AnalysisEngine(enable_ai=args.ai).run(path)
 
     # 3. Report Results
-    reporter = ConsoleReporter()
-    reporter.report(results)
+    ConsoleReporter().report(results)
 
 
 def main() -> None:

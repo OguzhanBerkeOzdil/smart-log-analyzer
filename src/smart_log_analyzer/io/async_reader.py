@@ -35,3 +35,4 @@ class AsyncLogReader:
                     continue
 
         return logs
+    
