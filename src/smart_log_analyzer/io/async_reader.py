@@ -1,6 +1,4 @@
-import asyncio
 import json
-import sys
 from pathlib import Path
 from typing import List
 from pydantic import ValidationError
@@ -15,7 +13,8 @@ class AsyncLogReader:
 
     @staticmethod
     async def read_file(path: Path) -> List[LogEntry]:
-        logs = []
+        logs: List[LogEntry] = []
+        
         if not path.exists():
             raise FileNotFoundError(f"Log file not found: {path}")
 

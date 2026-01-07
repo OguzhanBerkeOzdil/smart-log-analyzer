@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Tuple
 from .models import LogEntry, ErrorGroup, ErrorAnalysisResult, PerformanceAnalysisResult
 from .interfaces import AnalyzerStrategy
 

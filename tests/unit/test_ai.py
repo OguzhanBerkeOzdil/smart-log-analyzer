@@ -28,7 +28,7 @@ def test_get_error_explanation_success(
     analyzer = AIAnalyzer()
 
     # Act
-    result = analyzer._get_error_explanation(sample_error_group)
+    result = analyzer.get_error_explanation(sample_error_group)
 
     # Assert
     assert result == "Try restarting the database."
@@ -42,7 +42,7 @@ def test_ai_disabled_without_key(sample_error_group: ErrorGroup) -> None:
 
     with patch("os.getenv", return_value=None):
         # Act
-        result = analyzer._get_error_explanation(sample_error_group)
+        result = analyzer.get_error_explanation(sample_error_group)
 
     # Assert
     assert "disabled" in result

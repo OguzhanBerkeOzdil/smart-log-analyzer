@@ -44,7 +44,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
             }
 
         top_error = error_result["top_errors"][0]
-        insight = self._get_error_explanation(top_error)
+        insight = self.get_error_explanation(top_error)
 
         return {
             "kind": "ai",
@@ -52,7 +52,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
             "insight": insight,
         }
 
-    def _get_error_explanation(self, error: ErrorGroup) -> str:
+    def get_error_explanation(self, error: ErrorGroup) -> str:
         API_KEY = os.getenv("GEMINI_API_KEY")
         MODEL = "gemini-2.0-flash"  # Updated to latest efficient model
 
@@ -72,7 +72,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
 
             system_instruction = "You are an expert software engineer specializing in log analysis and debugging."
 
-            response = client.models.generate_content(
+            response = client.models.generate_content( # pyright: ignore[reportUnknownMemberType]
                 model=MODEL,
                 contents=prompt,
                 config=types.GenerateContentConfig(
@@ -80,7 +80,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
                     temperature=0.2,
                 ),
             )
-
+            
             return str(response.text)
 
         except Exception as e:
