@@ -14,7 +14,7 @@ class AsyncLogReader:
     @staticmethod
     async def read_file(path: Path) -> List[LogEntry]:
         logs: List[LogEntry] = []
-        
+
         if not path.exists():
             raise FileNotFoundError(f"Log file not found: {path}")
 

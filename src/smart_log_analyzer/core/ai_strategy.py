@@ -72,7 +72,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
 
             system_instruction = "You are an expert software engineer specializing in log analysis and debugging."
 
-            response = client.models.generate_content( # pyright: ignore[reportUnknownMemberType]
+            response = client.models.generate_content(  # pyright: ignore[reportUnknownMemberType]
                 model=MODEL,
                 contents=prompt,
                 config=types.GenerateContentConfig(
@@ -80,7 +80,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
                     temperature=0.2,
                 ),
             )
-            
+
             return str(response.text)
 
         except Exception as e:
