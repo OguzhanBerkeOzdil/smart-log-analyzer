@@ -13,7 +13,7 @@ load_dotenv()
 class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
     """
     Uses Google Gemini to provide insights on the most frequent error.
-    
+
     NOTE:
     This analyzer is intentionally NOT designed to work on raw log entries.
     It depends on the output of ErrorAnalyzer and must be executed after it.
@@ -28,14 +28,13 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
 
     def analyze(self, logs: List[LogEntry]) -> AIAnalysisResult:
         raise RuntimeError(
-            "AIAnalyzer cannot analyze raw logs. "
-            "It must be run after ErrorAnalyzer."
+            "AIAnalyzer cannot analyze raw logs. " "It must be run after ErrorAnalyzer."
         )
 
     def analyze_from_error_result(
         self,
         error_result: ErrorAnalysisResult,
-        ) -> AIAnalysisResult:
+    ) -> AIAnalysisResult:
 
         if not error_result["top_errors"]:
             return {

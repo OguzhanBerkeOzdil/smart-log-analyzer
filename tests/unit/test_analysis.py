@@ -28,7 +28,7 @@ def test_slow_requests_filtering(sample_logs: list[LogEntry]) -> None:
     # Arrange
     analyzer = PerformanceAnalyzer()
 
-    # Act 
+    # Act
     result = analyzer.analyze(sample_logs)
     slow = result["slowest_requests"]
 
@@ -46,7 +46,9 @@ def test_slow_requests_limit(sample_logs: list[LogEntry]) -> None:
     analyzer = PerformanceAnalyzer()
 
     # Act
-    result = analyzer.analyze(sample_logs) # The analyzer returns top 10 by default, we just check we got them
+    result = analyzer.analyze(
+        sample_logs
+    )  # The analyzer returns top 10 by default, we just check we got them
     slow = result["slowest_requests"]
 
     # Assert

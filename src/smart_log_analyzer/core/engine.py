@@ -47,9 +47,7 @@ class AnalysisEngine:
 
             elif isinstance(strategy, AIAnalyzer):
                 if error_result is None:
-                    raise RuntimeError(
-                        "AIAnalyzer requires ErrorAnalyzer to run first"
-                    )
+                    raise RuntimeError("AIAnalyzer requires ErrorAnalyzer to run first")
                 results[strategy.name] = strategy.analyze_from_error_result(
                     error_result
                 )

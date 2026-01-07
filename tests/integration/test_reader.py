@@ -10,7 +10,7 @@ async def test_read_valid_log_file(tmp_path: Path) -> None:
     Writes a real file and reads it back using AsyncLogReader.
     """
 
-    # Arrange 
+    # Arrange
     log_file = tmp_path / "test.jsonl"
     log_data = [
         {
@@ -51,9 +51,9 @@ async def test_read_skips_malformed_lines(tmp_path: Path) -> None:
     # Arrange
     log_file = tmp_path / "bad.jsonl"
     with open(log_file, "w", encoding="utf-8") as f:
-        f.write('{"valid": "json"}\n')   # Missing required fields
-        f.write("THIS IS NOT JSON\n")     # Syntax error
-        f.write("\n")                     # Empty line
+        f.write('{"valid": "json"}\n')  # Missing required fields
+        f.write("THIS IS NOT JSON\n")  # Syntax error
+        f.write("\n")  # Empty line
 
     # Act
     entries = await AsyncLogReader.read_file(log_file)

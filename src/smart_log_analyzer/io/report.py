@@ -34,7 +34,7 @@ class ConsoleReporter:
         print(f"Total Errors: {data['total_errors']}")
         print(f"Unique Errors: {data['unique_errors']}")
         print("\nTop Recurring Errors:")
-        
+
         for i, group in enumerate(data["top_errors"][:5], 1):
             print(f"  {i}. [{group.count}x] {group.service}: {group.message}")
 
