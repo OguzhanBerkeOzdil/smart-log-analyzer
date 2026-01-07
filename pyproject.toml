@@ -33,7 +33,10 @@ line-length = 88
 target-version = ['py312']
 
 [tool.pyright]
-include = ["smart-log-analyzer"]
+include = ["src", "tests"]
+typeCheckingMode = "strict"
+reportMissingImports = true
+reportAttributeAccessIssue = true
 
 [tool.pytest.ini_options]
 pythonpath = "src"
