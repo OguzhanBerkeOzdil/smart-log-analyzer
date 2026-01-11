@@ -8,8 +8,19 @@ from smart_log_analyzer.io.async_reader import AsyncLogReader
 async def test_read_valid_log_file(tmp_path: Path) -> None:
     log_file = tmp_path / "test.jsonl"
     log_data = [
-        {"timestamp": "2023-10-10", "level": "INFO", "service": "test", "message": "hello", "duration_ms": 100},
-        {"timestamp": "2023-10-10", "level": "ERROR", "service": "test", "message": "broken"},
+        {
+            "timestamp": "2023-10-10",
+            "level": "INFO",
+            "service": "test",
+            "message": "hello",
+            "duration_ms": 100,
+        },
+        {
+            "timestamp": "2023-10-10",
+            "level": "ERROR",
+            "service": "test",
+            "message": "broken",
+        },
     ]
     with open(log_file, "w", encoding="utf-8") as f:
         for entry in log_data:
