@@ -8,15 +8,7 @@ from ..io.async_reader import AsyncLogReader
 
 
 class AnalysisEngine:
-    """
-    The core engine that orchestrates the log analysis process.
-    Uses the Strategy Pattern to apply multiple analyzers.
-
-    NOTE:
-    AnalyzerStrategy is generic over different result types.
-    The engine holds heterogeneous strategies, so `Any` is used
-    intentionally at this orchestration boundary.
-    """
+    """Orchestrates log analysis using the Strategy Pattern."""
 
     def __init__(self, enable_ai: bool = False):
         self.strategies: List[AnalyzerStrategy[Any]] = [
@@ -27,7 +19,6 @@ class AnalysisEngine:
             self.strategies.append(AIAnalyzer())
 
     def register_strategy(self, strategy: AnalyzerStrategy[Any]) -> None:
-        """Allows dynamic registration of new analysis strategies."""
         self.strategies.append(strategy)
 
     async def run(self, file_path: Path) -> Dict[str, AnalysisResult]:

@@ -4,9 +4,6 @@ from smart_log_analyzer.core.models import LogEntry, ErrorGroup
 
 @pytest.fixture
 def sample_logs() -> list[LogEntry]:
-    """
-    Returns a list of sample LogEntry objects for testing.
-    """
     return [
         LogEntry(
             timestamp="2023-01-01",
@@ -45,7 +42,4 @@ def sample_logs() -> list[LogEntry]:
 
 @pytest.fixture
 def sample_error_group() -> ErrorGroup:
-    """
-    Returns a single ErrorGroup for testing AI or reports.
-    """
     return ErrorGroup(service="db", message="Connection timeout", count=5)

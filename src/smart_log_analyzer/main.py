@@ -29,7 +29,6 @@ async def async_main() -> None:
     args = get_parser_args()
     path = args.path
 
-    # 1. Generate Logs if requested
     if args.generate:
         LogGenerator(args.output, count=args.count).generate()
         path = path or args.output
@@ -39,10 +38,7 @@ async def async_main() -> None:
         print("Usage: python -m smart_log_analyzer.main <path_to_logs> OR --generate")
         return
 
-    # 2. Run Analysis Engine
     results = await AnalysisEngine(enable_ai=args.ai).run(path)
-
-    # 3. Report Results
     ConsoleReporter().report(results)
 
 
