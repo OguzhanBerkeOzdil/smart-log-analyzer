@@ -7,23 +7,18 @@ from ..core.models import LogEntry
 
 
 class AsyncLogReader:
-    """
-    Asynchronous log reader using aiofiles for non-blocking I/O.
-    """
+    """Async log reader using aiofiles for non-blocking I/O."""
 
     @staticmethod
-    async def read_file(path: Path) -> AsyncIterator[LogEntry]:  # Return type changes
+    async def read_file(path: Path) -> AsyncIterator[LogEntry]:
         if not path.exists():
             raise FileNotFoundError(f"Log file not found: {path}")
 
         async with aiofiles.open(path, mode="r", encoding="utf-8") as f:
             async for line in f:
-                line = line.strip()
-                if not line:
+                if not (line := line.strip()):
                     continue
-
                 try:
-                    data = json.loads(line)
-                    yield LogEntry(**data)  # Yield one item at a time
+                    yield LogEntry(**json.loads(line))
                 except (json.JSONDecodeError, ValidationError):
                     continue

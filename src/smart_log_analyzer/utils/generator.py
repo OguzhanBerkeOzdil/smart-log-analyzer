@@ -22,9 +22,7 @@ class ServiceName(str, Enum):
 
 
 class LogSchema(BaseModel):
-    """
-    Represents the structure of a generated log entry.
-    """
+    """Structure of a generated log entry."""
 
     timestamp: str
     level: LogLevel
@@ -36,10 +34,7 @@ class LogSchema(BaseModel):
 
 
 class LogGenerator:
-    """
-    A robust synthetic log generator for testing the Smart Log Analyzer.
-    Uses weighted random choices to simulate realistic traffic patterns.
-    """
+    """Synthetic log generator for testing."""
 
     def __init__(self, output_path: Path, count: int = 1000):
         self.output_path = output_path
@@ -78,19 +73,13 @@ class LogGenerator:
         }
 
     def _generate_request_id(self) -> str:
-        """Generates a random request ID."""
         return f"req-{random.randint(100000, 999999)}"
 
     def _generate_timestamp(self) -> str:
-        """Generates a timestamp within the last 24 hours."""
         now = datetime.now(timezone.utc)
-        delta = timedelta(minutes=random.randint(0, 24 * 60))
-        return (now - delta).isoformat()
+        return (now - timedelta(minutes=random.randint(0, 24 * 60))).isoformat()
 
     def generate(self) -> None:
-        """
-        Generates logs and writes them to the specified file in JSONL format.
-        """
         print(f"Generating {self.count} logs to {self.output_path}...")
 
         with open(self.output_path, "w", encoding="utf-8") as f:

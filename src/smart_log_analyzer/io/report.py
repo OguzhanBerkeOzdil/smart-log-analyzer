@@ -8,26 +8,20 @@ from ..core.models import (
 
 
 class ConsoleReporter:
-    """
-    Reports analysis results to the console.
-    """
+    """Reports analysis results to the console."""
 
     def report(self, results: Dict[str, AnalysisResult]) -> None:
         for strategy_name, data in results.items():
             print(f"\n--- {strategy_name} ---")
-
-            if data["kind"] == "error":
-                self._report_error_analysis(data)
-
-            elif data["kind"] == "performance":
-                self._report_performance_analysis(data)
-
-            elif data["kind"] == "ai":
-                self._report_ai_analysis(data)
-
-            else:
-                raise ValueError(f"Unknown analysis kind: {data['kind']}")
-
+            match data["kind"]:
+                case "error":
+                    self._report_error_analysis(data)
+                case "performance":
+                    self._report_performance_analysis(data)
+                case "ai":
+                    self._report_ai_analysis(data)
+                case _:
+                    raise ValueError(f"Unknown analysis kind: {data['kind']}")
         print("\n" + "=" * 60)
 
     def _report_error_analysis(self, data: ErrorAnalysisResult) -> None:

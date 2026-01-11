@@ -11,25 +11,14 @@ load_dotenv()
 
 
 class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
-    """
-    Uses Google Gemini to provide insights on the most frequent error.
-
-    NOTE:
-    This analyzer is intentionally NOT designed to work on raw log entries.
-    It depends on the output of ErrorAnalyzer and must be executed after it.
-
-    The analyze() method is implemented only to satisfy the AnalyzerStrategy
-    interface contract and to prevent accidental misuse at runtime.
-    """
+    """Uses Google Gemini to provide insights on the most frequent error."""
 
     @property
     def name(self) -> str:
         return "AI Insight Analysis"
 
     def analyze(self, logs: List[LogEntry]) -> AIAnalysisResult:
-        raise RuntimeError(
-            "AIAnalyzer cannot analyze raw logs. " "It must be run after ErrorAnalyzer."
-        )
+        raise RuntimeError("AIAnalyzer requires ErrorAnalyzer output, not raw logs.")
 
     def analyze_from_error_result(
         self,
