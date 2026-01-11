@@ -44,5 +44,4 @@ async def test_read_skips_malformed_lines(tmp_path: Path) -> None:
 
     entries = [entry async for entry in AsyncLogReader.read_file(log_file)]
 
-    # Assert
     assert len(entries) == 0
