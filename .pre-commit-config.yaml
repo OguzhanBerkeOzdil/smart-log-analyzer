@@ -8,7 +8,7 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
 
-# 2. Black
+  # 2. Black
   - repo: https://github.com/psf/black
     rev: 24.3.0
     hooks:
@@ -20,4 +20,20 @@ repos:
     rev: v1.9.0
     hooks:
       - id: mypy
-        additional_dependencies: [types-requests, pydantic]
+        additional_dependencies: [
+          types-requests,
+          pydantic,
+          types-aiofiles,
+          pytest,
+          pytest-asyncio
+        ]
+
+  # 4. Pyright
+  - repo: local
+    hooks:
+      - id: pyright
+        name: pyright
+        entry: uv run pyright
+        language: system
+        types: [python]
+        pass_filenames: false
