@@ -1,5 +1,6 @@
+import heapq
 from collections import defaultdict
-from typing import List, Dict, Tuple
+from typing import AsyncIterable, Dict, Tuple, List
 from .models import LogEntry, ErrorGroup, ErrorAnalysisResult, PerformanceAnalysisResult
 from .interfaces import AnalyzerStrategy
 
@@ -11,9 +12,10 @@ class ErrorAnalyzer(AnalyzerStrategy[ErrorAnalysisResult]):
     def name(self) -> str:
         return "Error Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> ErrorAnalysisResult:
+    async def analyze(self, logs: AsyncIterable[LogEntry]) -> ErrorAnalysisResult:
         counts: Dict[Tuple[str, str], int] = defaultdict(int)
-        for entry in logs:
+
+        async for entry in logs:
             if entry.level == "ERROR":
                 counts[(entry.service, entry.message)] += 1
 
@@ -37,8 +39,25 @@ class PerformanceAnalyzer(AnalyzerStrategy[PerformanceAnalysisResult]):
     def name(self) -> str:
         return "Performance Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> PerformanceAnalysisResult:
-        if not (with_duration := [e for e in logs if e.duration_ms is not None]):
+    async def analyze(self, logs: AsyncIterable[LogEntry]) -> PerformanceAnalysisResult:
+        heap: List[Tuple[int, int, LogEntry]] = []
+        total_duration = 0.0
+        count = 0
+        tie_breaker = 0
+
+        async for entry in logs:
+            if entry.duration_ms is not None:
+                count += 1
+                total_duration += entry.duration_ms
+                tie_breaker += 1
+
+                item = (entry.duration_ms, tie_breaker, entry)
+                if len(heap) < 10:
+                    heapq.heappush(heap, item)
+                else:
+                    heapq.heappushpop(heap, item)
+
+        if count == 0:
             return {
                 "kind": "performance",
                 "average_duration_ms": 0.0,
@@ -46,12 +65,13 @@ class PerformanceAnalyzer(AnalyzerStrategy[PerformanceAnalysisResult]):
                 "slowest_requests": [],
             }
 
-        with_duration.sort(key=lambda e: e.duration_ms or 0, reverse=True)
-        avg = sum(e.duration_ms or 0 for e in with_duration) / len(with_duration)
+        slowest_sorted = [
+            item[2] for item in sorted(heap, key=lambda x: x[0], reverse=True)
+        ]
 
         return {
             "kind": "performance",
-            "slowest_requests": with_duration[:10],
-            "average_duration_ms": round(avg, 2),
-            "total_requests_with_duration": len(with_duration),
+            "slowest_requests": slowest_sorted,
+            "average_duration_ms": round(total_duration / count, 2),
+            "total_requests_with_duration": count,
         }

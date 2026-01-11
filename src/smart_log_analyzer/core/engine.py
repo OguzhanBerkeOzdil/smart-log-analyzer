@@ -1,3 +1,4 @@
+import asyncio
 from pathlib import Path
 from typing import List, Dict, Any
 from .models import AnalysisResult
@@ -23,27 +24,33 @@ class AnalysisEngine:
 
     async def run(self, file_path: Path) -> Dict[str, AnalysisResult]:
         print(f"Reading logs from {file_path}...")
-        logs = [entry async for entry in AsyncLogReader.read_file(file_path)]
-        print(f"Successfully read {len(logs)} log entries.")
 
         results: Dict[str, AnalysisResult] = {}
-        error_result = None
+        strategies_to_run = [
+            s for s in self.strategies if not isinstance(s, AIAnalyzer)
+        ]
 
-        for strategy in self.strategies:
-            print(f"Running {strategy.name}...")
+        print(f"Streaming logs to {len(strategies_to_run)} strategies...")
 
-            if isinstance(strategy, ErrorAnalyzer):
-                error_result = strategy.analyze(logs)
-                results[strategy.name] = error_result
+        futures = {
+            s.name: s.analyze(AsyncLogReader.read_file(file_path))
+            for s in strategies_to_run
+        }
 
-            elif isinstance(strategy, AIAnalyzer):
-                if error_result is None:
-                    raise RuntimeError("AIAnalyzer requires ErrorAnalyzer to run first")
-                results[strategy.name] = strategy.analyze_from_error_result(
-                    error_result
-                )
+        computed_results = await asyncio.gather(*futures.values())
 
-            else:
-                results[strategy.name] = strategy.analyze(logs)
+        for strategy, result in zip(strategies_to_run, computed_results):
+            results[strategy.name] = result
+
+        error_result = results.get("Error Analysis")
+        ai_strategy = next(
+            (s for s in self.strategies if isinstance(s, AIAnalyzer)), None
+        )
+
+        if ai_strategy and error_result and error_result["kind"] == "error":
+            print(f"Running {ai_strategy.name}...")
+            results[ai_strategy.name] = ai_strategy.analyze_from_error_result(
+                error_result
+            )
 
         return results
