@@ -40,35 +40,64 @@ class LogGenerator:
         self.output_path = output_path
         self.count = count
         self.fake_users = [random.randint(1000, 9999) for _ in range(50)]
+        self.endpoints = ["/api/v1/users", "/api/v1/orders", "/api/v2/products", "/health", "/metrics"]
+        self.http_codes = [200, 201, 400, 401, 403, 404, 500, 502, 503]
 
-        # Define common messages per service to ensure consistency
+        # Define varied messages per service with dynamic parts
         self.service_messages = {
             ServiceName.AUTH_SERVICE: [
                 ("User login successful", LogLevel.INFO),
-                ("Token validation failed", LogLevel.ERROR),
+                ("Token validation failed: expired token", LogLevel.ERROR),
+                ("Token validation failed: invalid signature", LogLevel.ERROR),
                 ("Password reset requested", LogLevel.INFO),
-                ("Invalid credentials", LogLevel.WARNING),
+                ("Invalid credentials for user", LogLevel.WARNING),
+                ("Session expired", LogLevel.WARNING),
+                ("MFA verification failed", LogLevel.ERROR),
+                ("OAuth callback error", LogLevel.ERROR),
+                ("JWT decode error: malformed token", LogLevel.ERROR),
             ],
             ServiceName.PAYMENT_SERVICE: [
                 ("Payment processed successfully", LogLevel.INFO),
-                ("Payment gateway timeout", LogLevel.ERROR),
-                ("Insufficient funds", LogLevel.WARNING),
+                ("Payment gateway timeout after 30s", LogLevel.ERROR),
+                ("Payment gateway timeout after 60s", LogLevel.ERROR),
+                ("Insufficient funds for transaction", LogLevel.WARNING),
                 ("Refund initiated", LogLevel.INFO),
+                ("Card declined: insufficient balance", LogLevel.ERROR),
+                ("Card declined: expired card", LogLevel.ERROR),
+                ("Stripe API connection refused", LogLevel.ERROR),
+                ("Currency conversion failed", LogLevel.ERROR),
+                ("Duplicate transaction detected", LogLevel.WARNING),
             ],
             ServiceName.USER_SERVICE: [
                 ("Profile updated", LogLevel.INFO),
                 ("User not found", LogLevel.ERROR),
                 ("Avatar uploaded", LogLevel.INFO),
+                ("Email validation failed", LogLevel.ERROR),
+                ("Database connection pool exhausted", LogLevel.ERROR),
+                ("Cache miss for user profile", LogLevel.DEBUG),
+                ("Password hash mismatch", LogLevel.ERROR),
+                ("Account locked: too many attempts", LogLevel.WARNING),
             ],
             ServiceName.INVENTORY_SERVICE: [
                 ("Stock checked", LogLevel.INFO),
                 ("Item out of stock", LogLevel.WARNING),
-                ("Inventory sync failed", LogLevel.ERROR),
+                ("Inventory sync failed: timeout", LogLevel.ERROR),
+                ("Inventory sync failed: data mismatch", LogLevel.ERROR),
+                ("Warehouse API unavailable", LogLevel.ERROR),
+                ("Stock reservation expired", LogLevel.WARNING),
+                ("Bulk update failed: constraint violation", LogLevel.ERROR),
+                ("Redis cache connection lost", LogLevel.ERROR),
             ],
             ServiceName.API_GATEWAY: [
                 ("Request routed", LogLevel.INFO),
                 ("Rate limit exceeded", LogLevel.WARNING),
-                ("Service unavailable", LogLevel.ERROR),
+                ("Service unavailable: auth-service", LogLevel.ERROR),
+                ("Service unavailable: payment-service", LogLevel.ERROR),
+                ("Circuit breaker opened", LogLevel.ERROR),
+                ("Request timeout: upstream unresponsive", LogLevel.ERROR),
+                ("SSL handshake failed", LogLevel.ERROR),
+                ("Load balancer health check failed", LogLevel.WARNING),
+                ("DNS resolution failed", LogLevel.ERROR),
             ],
         }
 
@@ -82,8 +111,20 @@ class LogGenerator:
     def generate(self) -> None:
         print(f"Generating {self.count} logs to {self.output_path}...")
 
+        # Dynamic error scenarios that vary per run
+        error_scenarios = [
+            f"Connection refused to port {random.randint(3000, 9000)}",
+            f"Timeout after {random.randint(10, 120)}s",
+            f"HTTP {random.choice([500, 502, 503, 504])} from upstream",
+            f"Memory limit exceeded: {random.randint(512, 2048)}MB",
+            f"Disk space critical: {random.randint(90, 99)}% used",
+            f"CPU throttling at {random.randint(80, 100)}%",
+            f"Queue depth exceeded: {random.randint(1000, 10000)} pending",
+            f"SSL certificate expires in {random.randint(1, 30)} days",
+        ]
+
         with open(self.output_path, "w", encoding="utf-8") as f:
-            for _ in range(self.count):
+            for i in range(self.count):
                 service = random.choice(list(ServiceName))
                 message_template, level = random.choice(self.service_messages[service])
 
@@ -92,10 +133,15 @@ class LogGenerator:
                 if random.random() < 0.05:
                     duration = random.randint(1000, 5000)  # Anomaly!
 
-                # Simulate error spikes: 10% chance to override level to ERROR
-                if random.random() < 0.1:
+                # Simulate error spikes: 15% chance to use dynamic error
+                if random.random() < 0.15:
                     level = LogLevel.ERROR
-                    message_template = f"Unexpected error in {service}"
+                    message_template = random.choice(error_scenarios)
+
+                # Add request context to some messages
+                if random.random() < 0.3 and level == LogLevel.ERROR:
+                    endpoint = random.choice(self.endpoints)
+                    message_template = f"{message_template} at {endpoint}"
 
                 log_entry = LogSchema(
                     timestamp=self._generate_timestamp(),
