@@ -2,7 +2,9 @@
 
 import asyncio
 import sys
+import time
 from pathlib import Path
+from typing import Any
 
 # Add src to path for absolute imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -11,7 +13,6 @@ import streamlit as st
 
 from smart_log_analyzer.core.engine import AnalysisEngine
 from smart_log_analyzer.core.llm_providers import LLMProvider, get_provider
-from smart_log_analyzer.core.models import ErrorGroup
 from smart_log_analyzer.utils.generator import LogGenerator
 
 # Page config
@@ -21,66 +22,35 @@ st.set_page_config(
     layout="wide",
 )
 
-# Custom CSS for better styling
+# Initialize session state
+if "log_path" not in st.session_state:
+    st.session_state.log_path = None
+if "results" not in st.session_state:
+    st.session_state.results = None
+if "ai_insight" not in st.session_state:
+    st.session_state.ai_insight = None
+if "selected_provider" not in st.session_state:
+    st.session_state.selected_provider = None
+
+# Custom CSS
 st.markdown(
     """
 <style>
-    .main-header {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1f77b4;
-        margin-bottom: 0.5rem;
-    }
-    .sub-header {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 2rem;
-    }
-    .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 10px;
-        color: white;
-        text-align: center;
-    }
-    .error-card {
-        background: #fff5f5;
-        border-left: 4px solid #e53e3e;
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 8px 8px 0;
-    }
-    .perf-card {
-        background: #fffaf0;
-        border-left: 4px solid #dd6b20;
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 8px 8px 0;
-    }
-    .ai-card {
-        background: #f0fff4;
-        border-left: 4px solid #38a169;
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border-radius: 0 8px 8px 0;
-    }
-    .stButton > button {
-        width: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 8px;
-    }
-    .stButton > button:hover {
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    }
+    .main-header { font-size: 2.5rem; font-weight: 700; color: #1f77b4; margin-bottom: 0.5rem; }
+    .sub-header { font-size: 1rem; color: #666; margin-bottom: 2rem; }
+    .error-card { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 1rem; margin: 0.5rem 0; border-radius: 0 8px 8px 0; }
+    .perf-card { background: #fffaf0; border-left: 4px solid #dd6b20; padding: 1rem; margin: 0.5rem 0; border-radius: 0 8px 8px 0; }
+    .ai-card { background: #f0fff4; border-left: 4px solid #38a169; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .stButton > button { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; font-weight: 600; }
 </style>
 """,
     unsafe_allow_html=True,
 )
+
+
+def run_analysis(log_path: Path) -> dict[str, Any]:
+    """Run the analysis engine and return results."""
+    return asyncio.run(AnalysisEngine(enable_ai=False).run(log_path))
 
 
 def main() -> None:
@@ -93,24 +63,21 @@ def main() -> None:
         unsafe_allow_html=True,
     )
 
-    # Sidebar configuration
+    # Sidebar
     with st.sidebar:
         st.header("⚙️ Configuration")
 
         # AI Provider Selection
         st.subheader("🤖 AI Provider")
         ai_options = {
-            "No AI": LLMProvider.NONE,
+            "No AI (Manual)": LLMProvider.NONE,
             "🌐 Google Gemini": LLMProvider.GEMINI,
-            "🏠 Qwen 2.5 7B (Local)": LLMProvider.QWEN,
-            "🏠 Phi-3.5 Mini (Local)": LLMProvider.PHI,
-            "🏠 Llama 3.2 3B (Local)": LLMProvider.LLAMA,
+            "🏠 Qwen 2.5 7B": LLMProvider.QWEN,
+            "🏠 Phi-3.5 Mini": LLMProvider.PHI,
+            "🏠 Llama 3.2 3B": LLMProvider.LLAMA,
         }
         selected_ai = st.selectbox(
-            "Select AI for insights:",
-            options=list(ai_options.keys()),
-            index=0,
-            help="Choose an AI provider for error analysis. Local models require Ollama.",
+            "Select AI:", options=list(ai_options.keys()), index=0
         )
         provider_type = ai_options[selected_ai]
 
@@ -119,194 +86,156 @@ def main() -> None:
         # Log Source
         st.subheader("📁 Log Source")
         source_option = st.radio(
-            "Choose log source:",
-            ["Upload File", "Generate Synthetic", "Use Sample"],
-            index=2,
+            "Source:", ["Generate New", "Upload File", "Use Sample"], index=0
         )
 
-        log_path: Path | None = None
-
-        if source_option == "Upload File":
-            uploaded = st.file_uploader("Upload JSONL file", type=["jsonl", "json"])
-            if uploaded:
-                import time
-
-                # Create unique temp file for each upload
-                temp_dir = Path("data")
-                temp_dir.mkdir(exist_ok=True)
-                temp_path = temp_dir / f"uploaded_{int(time.time())}.jsonl"
-                temp_path.write_bytes(uploaded.getvalue())
-                log_path = temp_path
-                st.success(f"✅ Uploaded {len(uploaded.getvalue())} bytes")
-
-        elif source_option == "Generate Synthetic":
-            count = st.slider("Number of logs", 50, 2000, 500, step=50)
-            if st.button("🎲 Generate"):
-                import time
-
-                gen_path = Path(f"data/synthetic_{int(time.time())}.jsonl")
+        if source_option == "Generate New":
+            count = st.slider("Log count:", 100, 2000, 500, step=100)
+            if st.button("🎲 Generate Logs", use_container_width=True):
+                gen_path = Path(f"data/gen_{int(time.time())}.jsonl")
+                gen_path.parent.mkdir(exist_ok=True)
                 LogGenerator(gen_path, count=count).generate()
-                log_path = gen_path
+                st.session_state.log_path = gen_path
+                st.session_state.results = None  # Clear old results
+                st.session_state.ai_insight = None
                 st.success(f"✅ Generated {count} logs!")
+                st.rerun()
+
+        elif source_option == "Upload File":
+            uploaded = st.file_uploader("Upload JSONL:", type=["jsonl"])
+            if uploaded:
+                upload_path = Path(f"data/upload_{int(time.time())}.jsonl")
+                upload_path.parent.mkdir(exist_ok=True)
+                upload_path.write_bytes(uploaded.getvalue())
+                st.session_state.log_path = upload_path
+                st.session_state.results = None
+                st.session_state.ai_insight = None
+                st.success("✅ Uploaded!")
 
         else:  # Use Sample
             sample_path = Path("data/sample_logs.jsonl")
             if sample_path.exists():
-                log_path = sample_path
+                if st.button("📄 Load Sample", use_container_width=True):
+                    st.session_state.log_path = sample_path
+                    st.session_state.results = None
+                    st.session_state.ai_insight = None
+                    st.rerun()
             else:
-                st.warning("Sample file not found. Generate logs first.")
+                st.warning("No sample file. Generate first!")
 
         st.divider()
 
-        # Info box
-        if provider_type != LLMProvider.NONE:
-            if provider_type == LLMProvider.GEMINI:
-                st.info("🌐 Using Gemini API (requires GEMINI_API_KEY)")
-            else:
-                st.info(f"🏠 Using local model via Ollama: {provider_type.value}")
+        # Show current file
+        if st.session_state.log_path:
+            st.success(f"📄 {st.session_state.log_path.name}")
+        else:
+            st.warning("No log file loaded")
 
-    # Main content area
-    col1, col2 = st.columns([2, 1])
+    # Main content
+    col1, col2 = st.columns([3, 1])
 
     with col1:
-        analyze_btn = st.button(
-            "🚀 Analyze Logs", type="primary", use_container_width=True
-        )
+        if st.button("🚀 ANALYZE", type="primary", use_container_width=True):
+            if st.session_state.log_path and st.session_state.log_path.exists():
+                with st.spinner("🔍 Analyzing..."):
+                    st.session_state.results = run_analysis(st.session_state.log_path)
+                    st.session_state.selected_provider = provider_type
+
+                    # Get AI insight if provider selected
+                    if provider_type != LLMProvider.NONE:
+                        error_result = st.session_state.results.get("Error Analysis")
+                        if error_result and error_result["top_errors"]:
+                            top_error = error_result["top_errors"][0]
+                            provider = get_provider(provider_type)
+                            if provider:
+                                st.session_state.ai_insight = {
+                                    "provider": provider.name,
+                                    "error": top_error,
+                                    "insight": provider.get_insight(top_error),
+                                }
+                    else:
+                        st.session_state.ai_insight = None
+
+                st.rerun()
+            else:
+                st.error("❌ Please load a log file first!")
 
     with col2:
-        if log_path:
-            st.success(f"📄 {log_path.name}")
-        else:
-            st.warning("No log file selected")
+        mode = "🤖 " + selected_ai if provider_type != LLMProvider.NONE else "📊 Manual"
+        st.info(mode)
 
-    # Run analysis
-    if analyze_btn and log_path:
-        # Clear previous results from cache
-        st.cache_data.clear()
-
-        # Show analysis mode
-        ai_badge = (
-            f"🌐 {selected_ai}"
-            if provider_type != LLMProvider.NONE
-            else "📊 Manual Analysis"
-        )
-        st.info(f"**Analysis Mode:** {ai_badge}")
-
-        with st.spinner("🔍 Analyzing logs..."):
-            # Run analysis WITHOUT built-in AI (we'll use custom provider)
-            results = asyncio.run(AnalysisEngine(enable_ai=False).run(log_path))
-
-        # Display results
+    # Display Results
+    if st.session_state.results:
         st.markdown("---")
         st.header("📊 Analysis Results")
 
-        # Metrics row
-        error_result = results.get("Error Analysis")
-        perf_result = results.get("Performance Analysis")
+        error_result = st.session_state.results.get("Error Analysis")
+        perf_result = st.session_state.results.get("Performance Analysis")
 
-        if error_result and error_result["kind"] == "error":
-            col1, col2, col3, col4 = st.columns(4)
-            with col1:
-                st.metric("🔴 Total Errors", error_result["total_errors"])
-            with col2:
-                st.metric("🔶 Unique Errors", error_result["unique_errors"])
+        # Metrics
+        if error_result:
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("🔴 Total Errors", error_result["total_errors"])
+            c2.metric("🔶 Unique Errors", error_result["unique_errors"])
+            if perf_result:
+                c3.metric("⏱️ Avg Duration", f"{perf_result['average_duration_ms']} ms")
+                c4.metric("📊 Requests", perf_result["total_requests_with_duration"])
 
-            if perf_result and perf_result["kind"] == "performance":
-                with col3:
-                    st.metric(
-                        "⏱️ Avg Duration", f"{perf_result['average_duration_ms']} ms"
-                    )
-                with col4:
-                    st.metric(
-                        "📊 Requests Analyzed",
-                        perf_result["total_requests_with_duration"],
-                    )
-
-        # Detailed results in tabs
+        # Tabs
         tab1, tab2, tab3 = st.tabs(["🔴 Errors", "⏱️ Performance", "🤖 AI Insights"])
 
         with tab1:
-            if error_result and error_result["kind"] == "error":
+            if error_result and error_result["top_errors"]:
                 st.subheader("Top Recurring Errors")
-                for i, group in enumerate(error_result["top_errors"][:10], 1):
-                    with st.container():
-                        st.markdown(
-                            f"""
-                        <div class="error-card">
-                            <strong>#{i}</strong> &nbsp;
-                            <span style="background:#e53e3e;color:white;padding:2px 8px;border-radius:4px;">
-                                {group.count}x
-                            </span>
-                            &nbsp; <strong>{group.service}</strong><br>
-                            <code>{group.message}</code>
-                        </div>
-                        """,
-                            unsafe_allow_html=True,
-                        )
-
-        with tab2:
-            if perf_result and perf_result["kind"] == "performance":
-                st.subheader("Slowest Requests")
-                for i, req in enumerate(perf_result["slowest_requests"][:10], 1):
-                    duration_color = (
-                        "#e53e3e" if (req.duration_ms or 0) > 1000 else "#dd6b20"
-                    )
+                for i, g in enumerate(error_result["top_errors"][:10], 1):
                     st.markdown(
-                        f"""
-                    <div class="perf-card">
-                        <strong>#{i}</strong> &nbsp;
-                        <span style="background:{duration_color};color:white;padding:2px 8px;border-radius:4px;">
-                            {req.duration_ms} ms
-                        </span>
-                        &nbsp; <strong>{req.service}</strong>
-                        &nbsp; <code>{req.request_id}</code>
-                    </div>
-                    """,
+                        f"""<div class="error-card">
+                        <strong>#{i}</strong>
+                        <span style="background:#e53e3e;color:white;padding:2px 8px;border-radius:4px;margin:0 8px;">{g.count}x</span>
+                        <strong>{g.service}</strong><br><code>{g.message}</code>
+                        </div>""",
                         unsafe_allow_html=True,
                     )
+            else:
+                st.info("No errors found!")
+
+        with tab2:
+            if perf_result and perf_result["slowest_requests"]:
+                st.subheader("Slowest Requests")
+                for i, r in enumerate(perf_result["slowest_requests"][:10], 1):
+                    color = "#e53e3e" if (r.duration_ms or 0) > 1000 else "#dd6b20"
+                    st.markdown(
+                        f"""<div class="perf-card">
+                        <strong>#{i}</strong>
+                        <span style="background:{color};color:white;padding:2px 8px;border-radius:4px;margin:0 8px;">{r.duration_ms} ms</span>
+                        <strong>{r.service}</strong> <code>{r.request_id}</code>
+                        </div>""",
+                        unsafe_allow_html=True,
+                    )
+            else:
+                st.info("No performance data!")
 
         with tab3:
-            if provider_type == LLMProvider.NONE:
-                st.info(
-                    "🤖 Select an AI provider from the sidebar to get insights on errors."
+            if st.session_state.ai_insight:
+                ai = st.session_state.ai_insight
+                st.subheader(f"🤖 {ai['provider']} Analysis")
+                st.markdown(f"**Error:** `{ai['error'].message}`")
+                st.markdown(
+                    f"**Service:** {ai['error'].service} ({ai['error'].count}x)"
                 )
-            elif (
-                error_result
-                and error_result["kind"] == "error"
-                and error_result["top_errors"]
-            ):
-                top_error: ErrorGroup = error_result["top_errors"][0]
-                st.subheader(f"AI Analysis: {top_error.message[:50]}...")
-
-                with st.spinner(f"Getting insights from {selected_ai}..."):
-                    provider = get_provider(provider_type)
-                    if provider:
-                        insight = provider.get_insight(top_error)
-                        st.markdown(
-                            f"""
-                        <div class="ai-card">
-                            <strong>🤖 {provider.name}</strong><br><br>
-                            {insight}
-                        </div>
-                        """,
-                            unsafe_allow_html=True,
-                        )
+                st.markdown("---")
+                st.markdown(
+                    f"""<div class="ai-card">{ai['insight']}</div>""",
+                    unsafe_allow_html=True,
+                )
+            elif st.session_state.selected_provider == LLMProvider.NONE:
+                st.info("💡 Select an AI provider from the sidebar to get insights!")
             else:
-                st.info("No errors found to analyze.")
-
-    elif analyze_btn and not log_path:
-        st.error("Please select or generate a log file first!")
+                st.warning("No AI insight available. Check if the model is running.")
 
     # Footer
     st.markdown("---")
-    st.markdown(
-        """
-    <div style="text-align:center;color:#888;font-size:0.9rem;">
-        Smart Log Analyzer • Built with Python & Streamlit • Advanced Python Programming Course
-    </div>
-    """,
-        unsafe_allow_html=True,
-    )
+    st.caption("Smart Log Analyzer • Advanced Python Programming")
 
 
 if __name__ == "__main__":
