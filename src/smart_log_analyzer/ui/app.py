@@ -129,17 +129,25 @@ def main() -> None:
         if source_option == "Upload File":
             uploaded = st.file_uploader("Upload JSONL file", type=["jsonl", "json"])
             if uploaded:
-                temp_path = Path("data/uploaded_logs.jsonl")
+                import time
+
+                # Create unique temp file for each upload
+                temp_dir = Path("data")
+                temp_dir.mkdir(exist_ok=True)
+                temp_path = temp_dir / f"uploaded_{int(time.time())}.jsonl"
                 temp_path.write_bytes(uploaded.getvalue())
                 log_path = temp_path
+                st.success(f"✅ Uploaded {len(uploaded.getvalue())} bytes")
 
         elif source_option == "Generate Synthetic":
             count = st.slider("Number of logs", 50, 2000, 500, step=50)
             if st.button("🎲 Generate"):
-                gen_path = Path("data/synthetic_logs.jsonl")
+                import time
+
+                gen_path = Path(f"data/synthetic_{int(time.time())}.jsonl")
                 LogGenerator(gen_path, count=count).generate()
                 log_path = gen_path
-                st.success(f"Generated {count} logs!")
+                st.success(f"✅ Generated {count} logs!")
 
         else:  # Use Sample
             sample_path = Path("data/sample_logs.jsonl")
@@ -173,7 +181,19 @@ def main() -> None:
 
     # Run analysis
     if analyze_btn and log_path:
-        with st.spinner("Analyzing logs..."):
+        # Clear previous results from cache
+        st.cache_data.clear()
+
+        # Show analysis mode
+        ai_badge = (
+            f"🌐 {selected_ai}"
+            if provider_type != LLMProvider.NONE
+            else "📊 Manual Analysis"
+        )
+        st.info(f"**Analysis Mode:** {ai_badge}")
+
+        with st.spinner("🔍 Analyzing logs..."):
+            # Run analysis WITHOUT built-in AI (we'll use custom provider)
             results = asyncio.run(AnalysisEngine(enable_ai=False).run(log_path))
 
         # Display results
