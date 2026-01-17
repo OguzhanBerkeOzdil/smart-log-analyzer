@@ -1,5 +1,19 @@
 import pytest
+from typing import List, AsyncIterable, TypeVar, Callable
 from smart_log_analyzer.core.models import LogEntry, ErrorGroup
+
+T = TypeVar("T")
+
+
+async def async_generator(items: List[T]) -> AsyncIterable[T]:
+    for item in items:
+        yield item
+
+
+@pytest.fixture
+def mock_stream() -> Callable[[List[LogEntry]], AsyncIterable[LogEntry]]:
+    """Returns a function that converts a list into an async iterable."""
+    return async_generator
 
 
 @pytest.fixture

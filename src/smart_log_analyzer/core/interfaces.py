@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, TypeVar, Generic
+from typing import AsyncIterable, TypeVar, Generic
 from .models import LogEntry
 
 TResult = TypeVar("TResult")
@@ -13,4 +13,4 @@ class AnalyzerStrategy(ABC, Generic[TResult]):
     def name(self) -> str: ...
 
     @abstractmethod
-    def analyze(self, logs: List[LogEntry]) -> TResult: ...
+    async def analyze(self, logs: AsyncIterable[LogEntry]) -> TResult: ...

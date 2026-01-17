@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import AsyncIterable
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -17,7 +17,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
     def name(self) -> str:
         return "AI Insight Analysis"
 
-    def analyze(self, logs: List[LogEntry]) -> AIAnalysisResult:
+    async def analyze(self, logs: AsyncIterable[LogEntry]) -> AIAnalysisResult:
         raise RuntimeError("AIAnalyzer requires ErrorAnalyzer output, not raw logs.")
 
     def analyze_from_error_result(
@@ -43,7 +43,7 @@ class AIAnalyzer(AnalyzerStrategy[AIAnalysisResult]):
 
     def get_error_explanation(self, error: ErrorGroup) -> str:
         API_KEY = os.getenv("GEMINI_API_KEY")
-        MODEL = "gemini-2.0-flash"  # Updated to latest efficient model
+        MODEL = "gemini-2.0-flash"
 
         if not API_KEY:
             return "(!) AI features disabled: GEMINI_API_KEY not found."
