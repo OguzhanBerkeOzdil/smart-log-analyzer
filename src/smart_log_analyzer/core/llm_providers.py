@@ -98,7 +98,8 @@ class OllamaProvider(BaseLLMProvider):
                     },
                 )
                 response.raise_for_status()
-                return response.json().get("response", "No response from model.")
+                result = response.json().get("response", "No response from model.")
+                return str(result)
         except httpx.ConnectError:
             return f"⚠️ Cannot connect to Ollama at {self._base_url}. Is Ollama running?"
         except Exception as e:

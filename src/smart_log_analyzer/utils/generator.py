@@ -40,7 +40,13 @@ class LogGenerator:
         self.output_path = output_path
         self.count = count
         self.fake_users = [random.randint(1000, 9999) for _ in range(50)]
-        self.endpoints = ["/api/v1/users", "/api/v1/orders", "/api/v2/products", "/health", "/metrics"]
+        self.endpoints = [
+            "/api/v1/users",
+            "/api/v1/orders",
+            "/api/v2/products",
+            "/health",
+            "/metrics",
+        ]
         self.http_codes = [200, 201, 400, 401, 403, 404, 500, 502, 503]
 
         # Define varied messages per service with dynamic parts
