@@ -49,13 +49,13 @@ Run the analyzer via the command line interface. The entry point is managed by `
 Analyze a local log file and print a textual report:
 
 ```bash
-uv run python -m smart_log_analyzer.cli data/test_logs.jsonl
+uv run python -m smart_log_analyzer.cli data/synthetic_logs.jsonl
 ```
 
 ### AI Debugging ModeAutomatically ask Google Gemini to explain the most frequent error found in the logs:
 
 ```bash
-uv run python -m smart_log_analyzer.cli data/logs_security.jsonl --ai
+uv run python -m smart_log_analyzer.cli data/synthetic_logs.jsonl --ai
 ```
 
 ### Options

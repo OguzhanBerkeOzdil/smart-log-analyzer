@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - 'dev-*'
+      - 'feat-*'
   pull_request:
     branches:
       - main
       - 'dev-*'
+      - 'feat-*'
 jobs:
   test-and-lint:
     runs-on: ubuntu-latest
