@@ -130,7 +130,7 @@ class LogGenerator:
         ]
 
         with open(self.output_path, "w", encoding="utf-8") as f:
-            for i in range(self.count):
+            for _ in range(self.count):
                 service = random.choice(list(ServiceName))
                 message_template, level = random.choice(self.service_messages[service])
 
