@@ -23,6 +23,7 @@ dev = [
     "pytest>=9.0.2",
     "types-aiofiles>=24.1.0",
     "pytest-asyncio",
+    "pytest-cov",
 ]
 
 [tool.mypy]
@@ -47,3 +48,8 @@ reportAttributeAccessIssue = true
 [tool.pytest.ini_options]
 pythonpath = "src"
 testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = [
+    "src/smart_log_analyzer/ui/**",
+]
