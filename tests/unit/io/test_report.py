@@ -9,7 +9,7 @@ from smart_log_analyzer.core.models import (
 )
 
 
-def test_report_error_analysis(capsys: CaptureFixture[str]):
+def test_report_error_analysis(capsys: CaptureFixture[str]) -> None:
     # Arrange
     reporter = ConsoleReporter()
 
@@ -34,7 +34,7 @@ def test_report_error_analysis(capsys: CaptureFixture[str]):
     assert "db: timeout" in out
 
 
-def test_report_performance_analysis(capsys: CaptureFixture[str]):
+def test_report_performance_analysis(capsys: CaptureFixture[str]) -> None:
     # Arrange
     reporter = ConsoleReporter()
 
@@ -59,7 +59,7 @@ def test_report_performance_analysis(capsys: CaptureFixture[str]):
     assert "Analyzed Requests: 1" in out
 
 
-def test_report_ai_analysis(capsys: CaptureFixture[str]):
+def test_report_ai_analysis(capsys: CaptureFixture[str]) -> None:
     # Arrange
     reporter = ConsoleReporter()
 
@@ -83,7 +83,9 @@ def test_report_ai_analysis(capsys: CaptureFixture[str]):
     assert "ok" in out
 
 
-def test_report_performance_with_slowest_requests(capsys: CaptureFixture[str]):
+def test_report_performance_with_slowest_requests(
+    capsys: CaptureFixture[str],
+) -> None:
     # Arrange
     reporter = ConsoleReporter()
 
@@ -116,7 +118,7 @@ def test_report_performance_with_slowest_requests(capsys: CaptureFixture[str]):
     assert "500ms | api | req-1" in out
 
 
-def test_report_ai_with_top_error(capsys: CaptureFixture[str]):
+def test_report_ai_with_top_error(capsys: CaptureFixture[str]) -> None:
     # Arrange
     reporter = ConsoleReporter()
 

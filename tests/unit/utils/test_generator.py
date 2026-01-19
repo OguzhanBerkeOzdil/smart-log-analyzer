@@ -4,7 +4,7 @@ from pathlib import Path
 from smart_log_analyzer.utils.generator import LogGenerator
 
 
-def test_log_generator_creates_file(tmp_path: Path):
+def test_log_generator_creates_file(tmp_path: Path) -> None:
     # Arrange
     output = tmp_path / "logs.jsonl"
     generator = LogGenerator(output_path=output, count=5)
@@ -16,7 +16,9 @@ def test_log_generator_creates_file(tmp_path: Path):
     assert output.exists()
 
 
-def test_log_generator_writes_correct_number_of_lines(tmp_path: Path):
+def test_log_generator_writes_correct_number_of_lines(
+    tmp_path: Path,
+) -> None:
     # Arrange
     output = tmp_path / "logs.jsonl"
     generator = LogGenerator(output_path=output, count=3)
@@ -29,7 +31,9 @@ def test_log_generator_writes_correct_number_of_lines(tmp_path: Path):
     assert len(lines) == 3
 
 
-def test_log_generator_output_contains_required_fields(tmp_path: Path):
+def test_log_generator_output_contains_required_fields(
+    tmp_path: Path,
+) -> None:
     # Arrange
     output = tmp_path / "logs.jsonl"
     generator = LogGenerator(output_path=output, count=1)

@@ -10,7 +10,7 @@ from smart_log_analyzer.core.llm_providers import (
 from smart_log_analyzer.core.models import ErrorGroup
 
 
-def test_get_provider_none():
+def test_get_provider_none() -> None:
     # Arrange
     provider = get_provider(LLMProvider.NONE)
 
@@ -18,7 +18,7 @@ def test_get_provider_none():
     assert provider is None
 
 
-def test_get_provider_gemini():
+def test_get_provider_gemini() -> None:
     # Arrange
     provider = get_provider(LLMProvider.GEMINI)
 
@@ -26,7 +26,7 @@ def test_get_provider_gemini():
     assert isinstance(provider, GeminiProvider)
 
 
-def test_get_provider_ollama_models():
+def test_get_provider_ollama_models() -> None:
     # Arrange
     provider = get_provider(LLMProvider.QWEN)
 
@@ -34,7 +34,7 @@ def test_get_provider_ollama_models():
     assert isinstance(provider, OllamaProvider)
 
 
-def test_gemini_provider_no_api_key():
+def test_gemini_provider_no_api_key() -> None:
     # Arrange
     provider = GeminiProvider()
     error = ErrorGroup(service="db", message="timeout", count=1)
@@ -47,7 +47,7 @@ def test_gemini_provider_no_api_key():
     assert "GEMINI_API_KEY" in result
 
 
-def test_gemini_provider_success():
+def test_gemini_provider_success() -> None:
     # Arrange
     provider = GeminiProvider()
     error = ErrorGroup(service="db", message="timeout", count=1)
@@ -68,13 +68,13 @@ def test_gemini_provider_success():
     assert result == "ok"
 
 
-def test_ollama_provider_connection_error():
+def test_ollama_provider_connection_error() -> None:
     # Arrange
     provider = OllamaProvider("llama")
     error = ErrorGroup(service="db", message="timeout", count=1)
 
     with patch("httpx.Client.post", side_effect=httpx.ConnectError("fail")):
-        # Act
+        # ACt
         result = provider.get_insight(error)
 
     # Assert
