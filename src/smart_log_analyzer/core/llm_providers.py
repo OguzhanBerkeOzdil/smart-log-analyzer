@@ -21,8 +21,8 @@ class LLMProvider(str, Enum):
     NONE = "none"
     GEMINI = "gemini"
     QWEN = "qwen2.5:7b-instruct"
-    PHI = "phi3.5:mini"
-    LLAMA = "llama3.2:3b"
+    PHI = "phi3.5:3.8b-mini-instruct-q4_K_M"
+    LLAMA = "llama3.2"
 
 
 class BaseLLMProvider(ABC):

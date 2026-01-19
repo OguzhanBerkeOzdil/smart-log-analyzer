@@ -1,0 +1,500 @@
+{"timestamp":"2026-01-19T02:18:35.363786+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-167296","duration_ms":140,"user_id":5527}
+{"timestamp":"2026-01-19T05:50:35.363786+00:00","level":"ERROR","service":"payment-service","message":"Card declined: expired card","request_id":"req-402659","duration_ms":59,"user_id":1365}
+{"timestamp":"2026-01-18T14:28:35.363786+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-104534","duration_ms":117,"user_id":null}
+{"timestamp":"2026-01-18T17:35:35.363786+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-969469","duration_ms":199,"user_id":4796}
+{"timestamp":"2026-01-19T05:18:35.363786+00:00","level":"ERROR","service":"user-service","message":"Timeout after 43s","request_id":"req-578241","duration_ms":170,"user_id":2978}
+{"timestamp":"2026-01-19T06:03:35.363786+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v1/users","request_id":"req-804478","duration_ms":77,"user_id":7623}
+{"timestamp":"2026-01-18T22:26:35.363786+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-743473","duration_ms":10,"user_id":null}
+{"timestamp":"2026-01-18T21:13:35.363786+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout","request_id":"req-550067","duration_ms":115,"user_id":7623}
+{"timestamp":"2026-01-18T23:15:35.363786+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-291284","duration_ms":90,"user_id":7388}
+{"timestamp":"2026-01-18T11:11:35.363786+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed","request_id":"req-443844","duration_ms":3491,"user_id":9549}
+{"timestamp":"2026-01-19T00:42:35.363786+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-870341","duration_ms":162,"user_id":9797}
+{"timestamp":"2026-01-18T16:33:35.363786+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /metrics","request_id":"req-251819","duration_ms":111,"user_id":5818}
+{"timestamp":"2026-01-19T01:45:35.363786+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-833798","duration_ms":17,"user_id":6187}
+{"timestamp":"2026-01-18T17:14:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-362894","duration_ms":168,"user_id":2020}
+{"timestamp":"2026-01-18T10:27:35.364787+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-579275","duration_ms":173,"user_id":7241}
+{"timestamp":"2026-01-18T14:02:35.364787+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-847169","duration_ms":164,"user_id":3778}
+{"timestamp":"2026-01-18T20:56:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-626904","duration_ms":135,"user_id":7388}
+{"timestamp":"2026-01-18T13:48:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v2/products","request_id":"req-933950","duration_ms":71,"user_id":null}
+{"timestamp":"2026-01-18T17:08:35.364787+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-435624","duration_ms":133,"user_id":7623}
+{"timestamp":"2026-01-19T02:36:35.364787+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-391265","duration_ms":76,"user_id":1035}
+{"timestamp":"2026-01-18T12:05:35.364787+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused","request_id":"req-389718","duration_ms":4096,"user_id":4556}
+{"timestamp":"2026-01-19T03:57:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-486473","duration_ms":149,"user_id":3337}
+{"timestamp":"2026-01-18T12:04:35.364787+00:00","level":"ERROR","service":"auth-service","message":"Timeout after 43s at /api/v2/products","request_id":"req-221927","duration_ms":2777,"user_id":4648}
+{"timestamp":"2026-01-18T17:38:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation","request_id":"req-483238","duration_ms":104,"user_id":9144}
+{"timestamp":"2026-01-19T02:43:35.364787+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-761612","duration_ms":92,"user_id":3337}
+{"timestamp":"2026-01-19T07:34:35.364787+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-498261","duration_ms":83,"user_id":1365}
+{"timestamp":"2026-01-18T18:27:35.364787+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-688865","duration_ms":13,"user_id":null}
+{"timestamp":"2026-01-18T11:08:35.364787+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-613046","duration_ms":61,"user_id":5129}
+{"timestamp":"2026-01-19T07:21:35.364787+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-348519","duration_ms":119,"user_id":5076}
+{"timestamp":"2026-01-19T06:19:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout","request_id":"req-889362","duration_ms":93,"user_id":null}
+{"timestamp":"2026-01-19T05:46:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Disk space critical: 92% used","request_id":"req-314314","duration_ms":112,"user_id":6671}
+{"timestamp":"2026-01-18T23:52:35.364787+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-930623","duration_ms":142,"user_id":2020}
+{"timestamp":"2026-01-18T15:33:35.364787+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-344788","duration_ms":170,"user_id":1365}
+{"timestamp":"2026-01-19T03:26:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-459048","duration_ms":38,"user_id":null}
+{"timestamp":"2026-01-18T22:07:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-429736","duration_ms":56,"user_id":5210}
+{"timestamp":"2026-01-18T11:17:35.364787+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-632260","duration_ms":177,"user_id":4556}
+{"timestamp":"2026-01-19T03:41:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-117982","duration_ms":2723,"user_id":null}
+{"timestamp":"2026-01-19T08:28:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /api/v1/users","request_id":"req-867965","duration_ms":94,"user_id":1365}
+{"timestamp":"2026-01-18T21:52:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-786864","duration_ms":62,"user_id":2921}
+{"timestamp":"2026-01-19T02:22:35.364787+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-130053","duration_ms":84,"user_id":2020}
+{"timestamp":"2026-01-19T00:17:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: payment-service","request_id":"req-296477","duration_ms":103,"user_id":2058}
+{"timestamp":"2026-01-19T01:52:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-494830","duration_ms":157,"user_id":3337}
+{"timestamp":"2026-01-18T22:08:35.364787+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-596600","duration_ms":10,"user_id":4765}
+{"timestamp":"2026-01-19T02:04:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"SSL certificate expires in 16 days","request_id":"req-799828","duration_ms":50,"user_id":4082}
+{"timestamp":"2026-01-18T20:45:35.364787+00:00","level":"ERROR","service":"user-service","message":"Timeout after 43s","request_id":"req-900417","duration_ms":4126,"user_id":6113}
+{"timestamp":"2026-01-18T23:03:35.364787+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-726411","duration_ms":130,"user_id":5527}
+{"timestamp":"2026-01-19T00:31:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v1/users","request_id":"req-493438","duration_ms":59,"user_id":4556}
+{"timestamp":"2026-01-18T17:37:35.364787+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-526507","duration_ms":135,"user_id":9549}
+{"timestamp":"2026-01-18T21:40:35.364787+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-289895","duration_ms":38,"user_id":7257}
+{"timestamp":"2026-01-19T02:00:35.364787+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-503299","duration_ms":195,"user_id":2125}
+{"timestamp":"2026-01-18T21:49:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Connection refused to port 6497","request_id":"req-516032","duration_ms":125,"user_id":5928}
+{"timestamp":"2026-01-19T02:28:35.364787+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s at /api/v2/products","request_id":"req-968900","duration_ms":132,"user_id":9549}
+{"timestamp":"2026-01-19T02:20:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-310368","duration_ms":175,"user_id":2921}
+{"timestamp":"2026-01-18T22:12:35.364787+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted","request_id":"req-962413","duration_ms":41,"user_id":9269}
+{"timestamp":"2026-01-18T22:36:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation","request_id":"req-578190","duration_ms":158,"user_id":null}
+{"timestamp":"2026-01-19T06:34:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-652021","duration_ms":39,"user_id":4765}
+{"timestamp":"2026-01-18T21:14:35.364787+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-726141","duration_ms":152,"user_id":null}
+{"timestamp":"2026-01-19T09:17:35.364787+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-728537","duration_ms":86,"user_id":null}
+{"timestamp":"2026-01-18T20:40:35.364787+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-810500","duration_ms":102,"user_id":7774}
+{"timestamp":"2026-01-19T00:54:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed","request_id":"req-302004","duration_ms":158,"user_id":9655}
+{"timestamp":"2026-01-18T15:27:35.364787+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-823023","duration_ms":142,"user_id":2797}
+{"timestamp":"2026-01-19T01:58:35.364787+00:00","level":"ERROR","service":"payment-service","message":"Disk space critical: 92% used at /api/v1/orders","request_id":"req-769234","duration_ms":67,"user_id":2020}
+{"timestamp":"2026-01-19T00:25:35.364787+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-985100","duration_ms":87,"user_id":1365}
+{"timestamp":"2026-01-19T05:45:35.364787+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-251173","duration_ms":59,"user_id":null}
+{"timestamp":"2026-01-18T23:33:35.364787+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token at /api/v1/orders","request_id":"req-764278","duration_ms":141,"user_id":3862}
+{"timestamp":"2026-01-19T02:35:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-609806","duration_ms":135,"user_id":null}
+{"timestamp":"2026-01-18T21:50:35.364787+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-297693","duration_ms":1230,"user_id":4082}
+{"timestamp":"2026-01-19T01:11:35.364787+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-163039","duration_ms":104,"user_id":2125}
+{"timestamp":"2026-01-18T16:04:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-293996","duration_ms":38,"user_id":null}
+{"timestamp":"2026-01-18T13:46:35.364787+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed at /health","request_id":"req-750635","duration_ms":190,"user_id":7241}
+{"timestamp":"2026-01-18T20:47:35.364787+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-231767","duration_ms":76,"user_id":9323}
+{"timestamp":"2026-01-19T09:52:35.364787+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-670781","duration_ms":137,"user_id":9079}
+{"timestamp":"2026-01-19T09:11:35.364787+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-825967","duration_ms":56,"user_id":9323}
+{"timestamp":"2026-01-18T13:12:35.364787+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-482885","duration_ms":53,"user_id":9549}
+{"timestamp":"2026-01-19T02:35:35.364787+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-158535","duration_ms":191,"user_id":7623}
+{"timestamp":"2026-01-18T20:07:35.364787+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed at /metrics","request_id":"req-709503","duration_ms":13,"user_id":7369}
+{"timestamp":"2026-01-18T22:59:35.364787+00:00","level":"ERROR","service":"user-service","message":"Email validation failed at /metrics","request_id":"req-811378","duration_ms":3533,"user_id":4796}
+{"timestamp":"2026-01-19T09:36:35.364787+00:00","level":"ERROR","service":"inventory-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-254923","duration_ms":4492,"user_id":null}
+{"timestamp":"2026-01-18T16:45:35.365788+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-421454","duration_ms":138,"user_id":null}
+{"timestamp":"2026-01-18T11:32:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-856189","duration_ms":144,"user_id":7517}
+{"timestamp":"2026-01-19T02:01:35.365788+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token at /api/v1/users","request_id":"req-401818","duration_ms":99,"user_id":9549}
+{"timestamp":"2026-01-18T11:46:35.365788+00:00","level":"ERROR","service":"user-service","message":"HTTP 500 from upstream","request_id":"req-640416","duration_ms":51,"user_id":7568}
+{"timestamp":"2026-01-19T07:16:35.365788+00:00","level":"ERROR","service":"auth-service","message":"SSL certificate expires in 16 days at /api/v1/users","request_id":"req-338085","duration_ms":176,"user_id":9269}
+{"timestamp":"2026-01-18T15:19:35.365788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error at /api/v1/orders","request_id":"req-349293","duration_ms":78,"user_id":null}
+{"timestamp":"2026-01-18T13:58:35.365788+00:00","level":"ERROR","service":"auth-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-466021","duration_ms":140,"user_id":6187}
+{"timestamp":"2026-01-18T21:44:35.365788+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-917378","duration_ms":138,"user_id":4082}
+{"timestamp":"2026-01-19T09:27:35.365788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-147313","duration_ms":3009,"user_id":5129}
+{"timestamp":"2026-01-19T09:16:35.365788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-563272","duration_ms":45,"user_id":null}
+{"timestamp":"2026-01-18T20:46:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /api/v1/orders","request_id":"req-315623","duration_ms":116,"user_id":7568}
+{"timestamp":"2026-01-19T03:38:35.365788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-546577","duration_ms":23,"user_id":7388}
+{"timestamp":"2026-01-18T16:17:35.365788+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-535007","duration_ms":74,"user_id":7541}
+{"timestamp":"2026-01-18T18:09:35.365788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-905984","duration_ms":96,"user_id":null}
+{"timestamp":"2026-01-18T14:09:35.365788+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-795144","duration_ms":73,"user_id":9376}
+{"timestamp":"2026-01-18T12:36:35.365788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-842111","duration_ms":195,"user_id":2058}
+{"timestamp":"2026-01-18T15:01:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation","request_id":"req-670657","duration_ms":131,"user_id":7388}
+{"timestamp":"2026-01-18T13:16:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /metrics","request_id":"req-730461","duration_ms":115,"user_id":4648}
+{"timestamp":"2026-01-18T19:39:35.365788+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-608872","duration_ms":3662,"user_id":null}
+{"timestamp":"2026-01-19T02:10:35.365788+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-736853","duration_ms":3719,"user_id":4765}
+{"timestamp":"2026-01-19T05:04:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-916861","duration_ms":128,"user_id":5527}
+{"timestamp":"2026-01-18T13:10:35.365788+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-102926","duration_ms":51,"user_id":5527}
+{"timestamp":"2026-01-19T00:44:35.365788+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-103349","duration_ms":75,"user_id":9269}
+{"timestamp":"2026-01-18T19:35:35.365788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-951517","duration_ms":63,"user_id":2797}
+{"timestamp":"2026-01-18T13:51:35.365788+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-957369","duration_ms":58,"user_id":null}
+{"timestamp":"2026-01-19T06:09:35.365788+00:00","level":"ERROR","service":"user-service","message":"CPU throttling at 83%","request_id":"req-863603","duration_ms":139,"user_id":9144}
+{"timestamp":"2026-01-18T13:09:35.365788+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-267299","duration_ms":167,"user_id":2058}
+{"timestamp":"2026-01-18T19:03:35.365788+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-332642","duration_ms":101,"user_id":null}
+{"timestamp":"2026-01-19T01:17:35.365788+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-824944","duration_ms":43,"user_id":2978}
+{"timestamp":"2026-01-18T17:09:35.365788+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-380271","duration_ms":172,"user_id":9491}
+{"timestamp":"2026-01-18T23:24:35.365788+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token at /health","request_id":"req-606745","duration_ms":188,"user_id":9797}
+{"timestamp":"2026-01-19T02:15:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-543222","duration_ms":47,"user_id":2758}
+{"timestamp":"2026-01-19T03:19:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-618315","duration_ms":138,"user_id":6187}
+{"timestamp":"2026-01-18T11:05:35.365788+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-264700","duration_ms":181,"user_id":1365}
+{"timestamp":"2026-01-18T21:33:35.365788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-198708","duration_ms":120,"user_id":null}
+{"timestamp":"2026-01-18T17:40:35.365788+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-975967","duration_ms":192,"user_id":3778}
+{"timestamp":"2026-01-18T13:51:35.365788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-399526","duration_ms":198,"user_id":9269}
+{"timestamp":"2026-01-18T23:53:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v1/users","request_id":"req-770890","duration_ms":150,"user_id":1035}
+{"timestamp":"2026-01-19T03:52:35.365788+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-949320","duration_ms":59,"user_id":9549}
+{"timestamp":"2026-01-18T23:03:35.365788+00:00","level":"ERROR","service":"user-service","message":"User not found at /api/v1/orders","request_id":"req-251451","duration_ms":157,"user_id":9491}
+{"timestamp":"2026-01-19T01:05:35.365788+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted at /api/v1/orders","request_id":"req-992321","duration_ms":55,"user_id":4796}
+{"timestamp":"2026-01-18T12:07:35.365788+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token","request_id":"req-151389","duration_ms":130,"user_id":null}
+{"timestamp":"2026-01-18T13:28:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-982951","duration_ms":40,"user_id":null}
+{"timestamp":"2026-01-18T10:26:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s","request_id":"req-559049","duration_ms":142,"user_id":null}
+{"timestamp":"2026-01-18T15:50:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation","request_id":"req-556055","duration_ms":113,"user_id":5928}
+{"timestamp":"2026-01-18T21:37:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: payment-service","request_id":"req-360287","duration_ms":179,"user_id":9376}
+{"timestamp":"2026-01-18T19:31:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance at /health","request_id":"req-509070","duration_ms":163,"user_id":null}
+{"timestamp":"2026-01-19T04:46:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v1/orders","request_id":"req-751741","duration_ms":36,"user_id":null}
+{"timestamp":"2026-01-18T15:49:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /health","request_id":"req-802028","duration_ms":197,"user_id":2058}
+{"timestamp":"2026-01-19T09:43:35.365788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-676286","duration_ms":115,"user_id":5210}
+{"timestamp":"2026-01-18T22:25:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /metrics","request_id":"req-302470","duration_ms":76,"user_id":9491}
+{"timestamp":"2026-01-19T06:15:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-364408","duration_ms":15,"user_id":2125}
+{"timestamp":"2026-01-18T16:25:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: expired card","request_id":"req-380309","duration_ms":155,"user_id":2058}
+{"timestamp":"2026-01-18T21:55:35.365788+00:00","level":"ERROR","service":"user-service","message":"Email validation failed at /metrics","request_id":"req-597359","duration_ms":117,"user_id":null}
+{"timestamp":"2026-01-19T09:48:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"Queue depth exceeded: 9775 pending","request_id":"req-448924","duration_ms":70,"user_id":7369}
+{"timestamp":"2026-01-18T10:47:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: expired card","request_id":"req-102179","duration_ms":52,"user_id":2125}
+{"timestamp":"2026-01-19T04:52:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-317526","duration_ms":190,"user_id":null}
+{"timestamp":"2026-01-18T16:35:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed","request_id":"req-436093","duration_ms":191,"user_id":9655}
+{"timestamp":"2026-01-18T16:38:35.365788+00:00","level":"ERROR","service":"user-service","message":"User not found at /api/v1/orders","request_id":"req-258416","duration_ms":163,"user_id":null}
+{"timestamp":"2026-01-19T03:32:35.365788+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted","request_id":"req-577350","duration_ms":16,"user_id":2758}
+{"timestamp":"2026-01-19T05:24:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-764392","duration_ms":158,"user_id":7369}
+{"timestamp":"2026-01-18T12:46:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed at /health","request_id":"req-205692","duration_ms":145,"user_id":3862}
+{"timestamp":"2026-01-18T21:15:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"CPU throttling at 83%","request_id":"req-686999","duration_ms":108,"user_id":2020}
+{"timestamp":"2026-01-18T15:00:35.365788+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-216213","duration_ms":184,"user_id":9144}
+{"timestamp":"2026-01-19T07:55:35.365788+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-513565","duration_ms":32,"user_id":5928}
+{"timestamp":"2026-01-18T15:13:35.365788+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed","request_id":"req-750707","duration_ms":72,"user_id":null}
+{"timestamp":"2026-01-19T07:40:35.365788+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-952469","duration_ms":39,"user_id":null}
+{"timestamp":"2026-01-19T03:14:35.365788+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-663003","duration_ms":88,"user_id":7369}
+{"timestamp":"2026-01-19T00:15:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-821155","duration_ms":77,"user_id":9269}
+{"timestamp":"2026-01-19T05:22:35.365788+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-259587","duration_ms":131,"user_id":9491}
+{"timestamp":"2026-01-18T17:01:35.365788+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-910873","duration_ms":107,"user_id":null}
+{"timestamp":"2026-01-18T22:27:35.365788+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-770685","duration_ms":63,"user_id":6113}
+{"timestamp":"2026-01-18T16:34:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-265362","duration_ms":122,"user_id":1035}
+{"timestamp":"2026-01-18T16:44:35.365788+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-435357","duration_ms":1761,"user_id":null}
+{"timestamp":"2026-01-18T11:43:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v1/orders","request_id":"req-701765","duration_ms":196,"user_id":9079}
+{"timestamp":"2026-01-18T16:57:35.365788+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch at /metrics","request_id":"req-901473","duration_ms":112,"user_id":4765}
+{"timestamp":"2026-01-19T01:19:35.365788+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-632090","duration_ms":91,"user_id":8233}
+{"timestamp":"2026-01-18T14:55:35.365788+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /api/v1/users","request_id":"req-607820","duration_ms":140,"user_id":3778}
+{"timestamp":"2026-01-18T21:17:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-163219","duration_ms":169,"user_id":4648}
+{"timestamp":"2026-01-19T00:08:35.365788+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-803821","duration_ms":131,"user_id":5928}
+{"timestamp":"2026-01-18T10:20:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: payment-service","request_id":"req-831901","duration_ms":173,"user_id":null}
+{"timestamp":"2026-01-18T10:46:35.366785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-661617","duration_ms":22,"user_id":null}
+{"timestamp":"2026-01-19T00:29:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Disk space critical: 92% used","request_id":"req-841974","duration_ms":78,"user_id":2125}
+{"timestamp":"2026-01-18T16:34:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"HTTP 500 from upstream","request_id":"req-759185","duration_ms":192,"user_id":null}
+{"timestamp":"2026-01-18T16:25:35.366785+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-912812","duration_ms":79,"user_id":null}
+{"timestamp":"2026-01-18T20:57:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout at /metrics","request_id":"req-302268","duration_ms":37,"user_id":6671}
+{"timestamp":"2026-01-18T10:42:35.366785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-436032","duration_ms":199,"user_id":2978}
+{"timestamp":"2026-01-18T14:13:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-710952","duration_ms":190,"user_id":7541}
+{"timestamp":"2026-01-18T18:02:35.366785+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-946618","duration_ms":181,"user_id":9079}
+{"timestamp":"2026-01-19T02:30:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-393906","duration_ms":31,"user_id":8233}
+{"timestamp":"2026-01-19T01:21:35.366785+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-503373","duration_ms":185,"user_id":7369}
+{"timestamp":"2026-01-18T19:31:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-309283","duration_ms":178,"user_id":null}
+{"timestamp":"2026-01-19T03:28:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-672453","duration_ms":131,"user_id":7517}
+{"timestamp":"2026-01-18T14:38:35.366785+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-410903","duration_ms":49,"user_id":3862}
+{"timestamp":"2026-01-18T22:26:35.366785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-553309","duration_ms":168,"user_id":7623}
+{"timestamp":"2026-01-19T07:41:35.366785+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-601090","duration_ms":152,"user_id":9549}
+{"timestamp":"2026-01-18T14:28:35.366785+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-908107","duration_ms":51,"user_id":9376}
+{"timestamp":"2026-01-19T03:30:35.366785+00:00","level":"ERROR","service":"user-service","message":"SSL certificate expires in 16 days","request_id":"req-543470","duration_ms":161,"user_id":9549}
+{"timestamp":"2026-01-18T10:44:35.366785+00:00","level":"ERROR","service":"user-service","message":"CPU throttling at 83%","request_id":"req-175690","duration_ms":175,"user_id":null}
+{"timestamp":"2026-01-18T20:45:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s at /health","request_id":"req-630433","duration_ms":104,"user_id":6187}
+{"timestamp":"2026-01-18T16:00:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-298753","duration_ms":56,"user_id":8750}
+{"timestamp":"2026-01-18T20:50:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Connection refused to port 6497","request_id":"req-351644","duration_ms":3034,"user_id":5076}
+{"timestamp":"2026-01-19T02:31:35.366785+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-802855","duration_ms":142,"user_id":2921}
+{"timestamp":"2026-01-18T13:05:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-490497","duration_ms":73,"user_id":null}
+{"timestamp":"2026-01-19T00:49:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Connection refused to port 6497","request_id":"req-720740","duration_ms":71,"user_id":1035}
+{"timestamp":"2026-01-19T02:16:35.366785+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-278809","duration_ms":20,"user_id":7623}
+{"timestamp":"2026-01-19T07:56:35.366785+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-420867","duration_ms":120,"user_id":null}
+{"timestamp":"2026-01-18T10:46:35.366785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-710352","duration_ms":136,"user_id":9269}
+{"timestamp":"2026-01-19T09:22:35.366785+00:00","level":"ERROR","service":"payment-service","message":"CPU throttling at 83%","request_id":"req-204470","duration_ms":185,"user_id":7241}
+{"timestamp":"2026-01-18T22:05:35.366785+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-578244","duration_ms":190,"user_id":9144}
+{"timestamp":"2026-01-19T09:04:35.366785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-593175","duration_ms":169,"user_id":4765}
+{"timestamp":"2026-01-18T22:42:35.366785+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token at /api/v1/users","request_id":"req-370876","duration_ms":21,"user_id":2125}
+{"timestamp":"2026-01-19T05:33:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s at /api/v2/products","request_id":"req-208057","duration_ms":95,"user_id":7257}
+{"timestamp":"2026-01-18T19:20:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-852916","duration_ms":97,"user_id":null}
+{"timestamp":"2026-01-19T07:03:35.366785+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-472227","duration_ms":163,"user_id":4556}
+{"timestamp":"2026-01-19T02:13:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-904052","duration_ms":161,"user_id":2058}
+{"timestamp":"2026-01-19T03:15:35.366785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-662460","duration_ms":116,"user_id":null}
+{"timestamp":"2026-01-18T18:33:35.366785+00:00","level":"WARNING","service":"auth-service","message":"Session expired","request_id":"req-999164","duration_ms":103,"user_id":7623}
+{"timestamp":"2026-01-19T05:29:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Timeout after 43s","request_id":"req-905163","duration_ms":4030,"user_id":8233}
+{"timestamp":"2026-01-19T02:54:35.366785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-253249","duration_ms":131,"user_id":4765}
+{"timestamp":"2026-01-18T22:58:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable at /api/v2/products","request_id":"req-887437","duration_ms":68,"user_id":5210}
+{"timestamp":"2026-01-19T07:57:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-806109","duration_ms":147,"user_id":4082}
+{"timestamp":"2026-01-18T21:37:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-906564","duration_ms":150,"user_id":4765}
+{"timestamp":"2026-01-18T19:12:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-706724","duration_ms":87,"user_id":3184}
+{"timestamp":"2026-01-18T13:33:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-857645","duration_ms":161,"user_id":7369}
+{"timestamp":"2026-01-18T16:05:35.366785+00:00","level":"WARNING","service":"auth-service","message":"Session expired","request_id":"req-501208","duration_ms":171,"user_id":2949}
+{"timestamp":"2026-01-19T03:18:35.366785+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-230343","duration_ms":157,"user_id":null}
+{"timestamp":"2026-01-18T12:23:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-943221","duration_ms":42,"user_id":2758}
+{"timestamp":"2026-01-18T23:57:35.366785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-947311","duration_ms":82,"user_id":2125}
+{"timestamp":"2026-01-18T13:59:35.366785+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-854840","duration_ms":118,"user_id":null}
+{"timestamp":"2026-01-19T02:28:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-930184","duration_ms":53,"user_id":null}
+{"timestamp":"2026-01-19T04:44:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout at /api/v1/users","request_id":"req-722753","duration_ms":199,"user_id":2758}
+{"timestamp":"2026-01-18T22:06:35.366785+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-459171","duration_ms":115,"user_id":4556}
+{"timestamp":"2026-01-19T01:37:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"HTTP 500 from upstream at /health","request_id":"req-255814","duration_ms":191,"user_id":6113}
+{"timestamp":"2026-01-18T23:58:35.366785+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-935888","duration_ms":69,"user_id":4082}
+{"timestamp":"2026-01-19T08:53:35.366785+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-905945","duration_ms":108,"user_id":4796}
+{"timestamp":"2026-01-18T18:51:35.366785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-578374","duration_ms":44,"user_id":2949}
+{"timestamp":"2026-01-19T05:38:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive at /metrics","request_id":"req-387156","duration_ms":82,"user_id":9549}
+{"timestamp":"2026-01-18T17:19:35.366785+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-847973","duration_ms":148,"user_id":6113}
+{"timestamp":"2026-01-19T03:58:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-228218","duration_ms":58,"user_id":2758}
+{"timestamp":"2026-01-19T08:23:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /api/v1/orders","request_id":"req-759725","duration_ms":34,"user_id":5928}
+{"timestamp":"2026-01-18T22:36:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service at /api/v1/orders","request_id":"req-574834","duration_ms":56,"user_id":null}
+{"timestamp":"2026-01-18T12:38:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /api/v1/users","request_id":"req-666141","duration_ms":147,"user_id":5210}
+{"timestamp":"2026-01-18T12:36:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /health","request_id":"req-918411","duration_ms":144,"user_id":4556}
+{"timestamp":"2026-01-18T23:18:35.366785+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-620712","duration_ms":87,"user_id":9323}
+{"timestamp":"2026-01-18T12:21:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: expired card at /api/v1/orders","request_id":"req-715785","duration_ms":131,"user_id":2125}
+{"timestamp":"2026-01-18T12:27:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-832754","duration_ms":191,"user_id":9491}
+{"timestamp":"2026-01-19T04:47:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-233657","duration_ms":21,"user_id":9549}
+{"timestamp":"2026-01-19T03:05:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-733750","duration_ms":20,"user_id":5928}
+{"timestamp":"2026-01-18T15:30:35.366785+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-681056","duration_ms":31,"user_id":4796}
+{"timestamp":"2026-01-19T06:37:35.366785+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /api/v1/orders","request_id":"req-789389","duration_ms":28,"user_id":4191}
+{"timestamp":"2026-01-18T17:20:35.366785+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-108560","duration_ms":51,"user_id":2058}
+{"timestamp":"2026-01-18T12:10:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-878535","duration_ms":152,"user_id":null}
+{"timestamp":"2026-01-18T22:47:35.366785+00:00","level":"ERROR","service":"payment-service","message":"Disk space critical: 92% used","request_id":"req-856793","duration_ms":163,"user_id":3862}
+{"timestamp":"2026-01-18T10:56:35.366785+00:00","level":"ERROR","service":"user-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-420122","duration_ms":100,"user_id":9797}
+{"timestamp":"2026-01-18T21:57:35.366785+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-676015","duration_ms":150,"user_id":4765}
+{"timestamp":"2026-01-18T20:31:35.366785+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-839711","duration_ms":80,"user_id":7369}
+{"timestamp":"2026-01-18T13:46:35.366785+00:00","level":"ERROR","service":"user-service","message":"Timeout after 43s","request_id":"req-922923","duration_ms":145,"user_id":null}
+{"timestamp":"2026-01-19T05:17:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-421926","duration_ms":19,"user_id":6113}
+{"timestamp":"2026-01-18T15:00:35.366785+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-770906","duration_ms":63,"user_id":8750}
+{"timestamp":"2026-01-19T03:34:35.366785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-743062","duration_ms":74,"user_id":3337}
+{"timestamp":"2026-01-18T11:59:35.366785+00:00","level":"ERROR","service":"payment-service","message":"HTTP 500 from upstream at /api/v1/users","request_id":"req-880945","duration_ms":199,"user_id":7568}
+{"timestamp":"2026-01-19T06:40:35.366785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-472792","duration_ms":146,"user_id":null}
+{"timestamp":"2026-01-18T12:36:35.366785+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-666592","duration_ms":103,"user_id":4191}
+{"timestamp":"2026-01-18T20:57:35.366785+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-543164","duration_ms":57,"user_id":null}
+{"timestamp":"2026-01-19T01:09:35.366785+00:00","level":"ERROR","service":"auth-service","message":"Timeout after 43s","request_id":"req-347294","duration_ms":121,"user_id":2020}
+{"timestamp":"2026-01-18T14:17:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed","request_id":"req-899174","duration_ms":52,"user_id":7568}
+{"timestamp":"2026-01-19T06:01:35.366785+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /api/v1/orders","request_id":"req-278089","duration_ms":190,"user_id":5210}
+{"timestamp":"2026-01-19T01:54:35.366785+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted","request_id":"req-256176","duration_ms":26,"user_id":9376}
+{"timestamp":"2026-01-19T00:57:35.367785+00:00","level":"ERROR","service":"auth-service","message":"Timeout after 43s at /api/v1/orders","request_id":"req-103739","duration_ms":11,"user_id":2949}
+{"timestamp":"2026-01-18T16:18:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s at /api/v1/orders","request_id":"req-567394","duration_ms":2789,"user_id":9491}
+{"timestamp":"2026-01-19T03:01:35.367785+00:00","level":"ERROR","service":"user-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-271742","duration_ms":24,"user_id":8750}
+{"timestamp":"2026-01-19T09:35:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-976231","duration_ms":127,"user_id":5928}
+{"timestamp":"2026-01-18T18:50:35.367785+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-492012","duration_ms":89,"user_id":5928}
+{"timestamp":"2026-01-18T23:55:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-975813","duration_ms":178,"user_id":9323}
+{"timestamp":"2026-01-18T12:45:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-240383","duration_ms":166,"user_id":null}
+{"timestamp":"2026-01-18T13:44:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance at /api/v1/users","request_id":"req-811606","duration_ms":176,"user_id":9549}
+{"timestamp":"2026-01-18T13:11:35.367785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-390044","duration_ms":105,"user_id":3184}
+{"timestamp":"2026-01-18T18:51:35.367785+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-147325","duration_ms":105,"user_id":9269}
+{"timestamp":"2026-01-18T22:43:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s","request_id":"req-558672","duration_ms":105,"user_id":2058}
+{"timestamp":"2026-01-19T01:02:35.367785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-687055","duration_ms":3091,"user_id":2058}
+{"timestamp":"2026-01-19T07:58:35.367785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-612816","duration_ms":128,"user_id":4648}
+{"timestamp":"2026-01-18T19:17:35.367785+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-468031","duration_ms":104,"user_id":7257}
+{"timestamp":"2026-01-18T10:10:35.367785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed at /health","request_id":"req-164444","duration_ms":54,"user_id":2758}
+{"timestamp":"2026-01-18T23:11:35.367785+00:00","level":"ERROR","service":"payment-service","message":"SSL certificate expires in 16 days","request_id":"req-754043","duration_ms":158,"user_id":3184}
+{"timestamp":"2026-01-18T13:41:35.367785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token at /api/v1/orders","request_id":"req-400809","duration_ms":55,"user_id":2125}
+{"timestamp":"2026-01-18T11:13:35.367785+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-267288","duration_ms":142,"user_id":5818}
+{"timestamp":"2026-01-18T11:30:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-353148","duration_ms":128,"user_id":null}
+{"timestamp":"2026-01-18T13:00:35.367785+00:00","level":"WARNING","service":"auth-service","message":"Session expired","request_id":"req-771516","duration_ms":111,"user_id":null}
+{"timestamp":"2026-01-19T07:21:35.367785+00:00","level":"ERROR","service":"payment-service","message":"CPU throttling at 83%","request_id":"req-473007","duration_ms":165,"user_id":3184}
+{"timestamp":"2026-01-18T13:44:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive at /api/v1/orders","request_id":"req-257365","duration_ms":199,"user_id":7388}
+{"timestamp":"2026-01-18T16:46:35.367785+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-365503","duration_ms":74,"user_id":8750}
+{"timestamp":"2026-01-18T20:26:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-270848","duration_ms":118,"user_id":5928}
+{"timestamp":"2026-01-19T00:11:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-382852","duration_ms":61,"user_id":null}
+{"timestamp":"2026-01-18T15:05:35.367785+00:00","level":"ERROR","service":"user-service","message":"Email validation failed at /api/v1/users","request_id":"req-343910","duration_ms":94,"user_id":null}
+{"timestamp":"2026-01-18T11:45:35.367785+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-869900","duration_ms":64,"user_id":2978}
+{"timestamp":"2026-01-18T18:34:35.367785+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted","request_id":"req-317165","duration_ms":53,"user_id":1035}
+{"timestamp":"2026-01-18T15:21:35.367785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-511964","duration_ms":20,"user_id":3862}
+{"timestamp":"2026-01-18T15:07:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-146650","duration_ms":33,"user_id":9549}
+{"timestamp":"2026-01-18T15:24:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-670891","duration_ms":102,"user_id":8750}
+{"timestamp":"2026-01-18T15:26:35.367785+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-577835","duration_ms":104,"user_id":null}
+{"timestamp":"2026-01-18T10:39:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout at /health","request_id":"req-315627","duration_ms":89,"user_id":3337}
+{"timestamp":"2026-01-19T09:43:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-275453","duration_ms":161,"user_id":4765}
+{"timestamp":"2026-01-18T21:09:35.367785+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-281125","duration_ms":195,"user_id":2797}
+{"timestamp":"2026-01-19T07:27:35.367785+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-799419","duration_ms":77,"user_id":9797}
+{"timestamp":"2026-01-19T00:22:35.367785+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-228292","duration_ms":154,"user_id":4191}
+{"timestamp":"2026-01-18T21:45:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-887424","duration_ms":101,"user_id":1035}
+{"timestamp":"2026-01-19T07:29:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout at /metrics","request_id":"req-372925","duration_ms":4255,"user_id":9376}
+{"timestamp":"2026-01-18T17:06:35.367785+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-588888","duration_ms":120,"user_id":9323}
+{"timestamp":"2026-01-19T06:19:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-374152","duration_ms":169,"user_id":2125}
+{"timestamp":"2026-01-18T16:03:35.367785+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-264890","duration_ms":54,"user_id":2020}
+{"timestamp":"2026-01-18T20:13:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Memory limit exceeded: 1718MB","request_id":"req-852728","duration_ms":165,"user_id":2978}
+{"timestamp":"2026-01-18T12:50:35.367785+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-392303","duration_ms":108,"user_id":7517}
+{"timestamp":"2026-01-18T18:43:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout","request_id":"req-406207","duration_ms":196,"user_id":5527}
+{"timestamp":"2026-01-19T01:05:35.367785+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch at /metrics","request_id":"req-248016","duration_ms":45,"user_id":3184}
+{"timestamp":"2026-01-18T10:35:35.367785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-616481","duration_ms":23,"user_id":1365}
+{"timestamp":"2026-01-18T19:55:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-514939","duration_ms":108,"user_id":9797}
+{"timestamp":"2026-01-19T06:14:35.367785+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-982998","duration_ms":138,"user_id":null}
+{"timestamp":"2026-01-18T21:03:35.367785+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-264320","duration_ms":156,"user_id":4556}
+{"timestamp":"2026-01-18T11:42:35.367785+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-234346","duration_ms":109,"user_id":5076}
+{"timestamp":"2026-01-18T14:59:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-861583","duration_ms":81,"user_id":null}
+{"timestamp":"2026-01-19T01:08:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v2/products","request_id":"req-944295","duration_ms":101,"user_id":null}
+{"timestamp":"2026-01-18T12:22:35.367785+00:00","level":"ERROR","service":"user-service","message":"Timeout after 43s","request_id":"req-816305","duration_ms":53,"user_id":null}
+{"timestamp":"2026-01-18T15:58:35.367785+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-311235","duration_ms":86,"user_id":4556}
+{"timestamp":"2026-01-18T13:30:35.367785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-116328","duration_ms":101,"user_id":null}
+{"timestamp":"2026-01-18T12:10:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused at /api/v1/orders","request_id":"req-894711","duration_ms":159,"user_id":3184}
+{"timestamp":"2026-01-18T13:22:35.367785+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-174348","duration_ms":195,"user_id":9549}
+{"timestamp":"2026-01-19T01:08:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-819617","duration_ms":177,"user_id":7257}
+{"timestamp":"2026-01-19T03:38:35.367785+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-656750","duration_ms":130,"user_id":7369}
+{"timestamp":"2026-01-18T14:04:35.367785+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-760188","duration_ms":143,"user_id":null}
+{"timestamp":"2026-01-19T05:28:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-186123","duration_ms":19,"user_id":1035}
+{"timestamp":"2026-01-19T04:14:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-916900","duration_ms":112,"user_id":7623}
+{"timestamp":"2026-01-18T12:10:35.367785+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-618364","duration_ms":177,"user_id":9144}
+{"timestamp":"2026-01-19T04:04:35.367785+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch at /api/v1/users","request_id":"req-383047","duration_ms":15,"user_id":3184}
+{"timestamp":"2026-01-19T09:05:35.367785+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error at /metrics","request_id":"req-220288","duration_ms":103,"user_id":7388}
+{"timestamp":"2026-01-19T09:24:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed at /api/v2/products","request_id":"req-178940","duration_ms":59,"user_id":7517}
+{"timestamp":"2026-01-19T00:53:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Memory limit exceeded: 1718MB","request_id":"req-969187","duration_ms":44,"user_id":2058}
+{"timestamp":"2026-01-19T02:08:35.367785+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed at /api/v1/orders","request_id":"req-644408","duration_ms":183,"user_id":5076}
+{"timestamp":"2026-01-19T04:39:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-823554","duration_ms":29,"user_id":9549}
+{"timestamp":"2026-01-19T01:53:35.367785+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-416530","duration_ms":20,"user_id":5210}
+{"timestamp":"2026-01-18T23:03:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-916975","duration_ms":79,"user_id":5818}
+{"timestamp":"2026-01-18T13:09:35.367785+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-910765","duration_ms":184,"user_id":6671}
+{"timestamp":"2026-01-18T13:12:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Disk space critical: 92% used at /api/v1/users","request_id":"req-329051","duration_ms":66,"user_id":3778}
+{"timestamp":"2026-01-18T18:57:35.367785+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-940142","duration_ms":41,"user_id":4648}
+{"timestamp":"2026-01-19T09:33:35.367785+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-930029","duration_ms":140,"user_id":3184}
+{"timestamp":"2026-01-18T13:05:35.367785+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s at /api/v1/orders","request_id":"req-325672","duration_ms":44,"user_id":6671}
+{"timestamp":"2026-01-19T05:17:35.367785+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-294454","duration_ms":150,"user_id":7388}
+{"timestamp":"2026-01-19T01:18:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-680745","duration_ms":58,"user_id":7541}
+{"timestamp":"2026-01-19T03:25:35.367785+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-520954","duration_ms":109,"user_id":7257}
+{"timestamp":"2026-01-19T08:01:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /metrics","request_id":"req-332496","duration_ms":136,"user_id":7623}
+{"timestamp":"2026-01-19T02:15:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-945572","duration_ms":44,"user_id":3862}
+{"timestamp":"2026-01-18T22:02:35.367785+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-161734","duration_ms":114,"user_id":4082}
+{"timestamp":"2026-01-19T05:29:35.367785+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed at /api/v1/orders","request_id":"req-736850","duration_ms":176,"user_id":4796}
+{"timestamp":"2026-01-19T01:03:35.367785+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-521521","duration_ms":157,"user_id":2949}
+{"timestamp":"2026-01-18T23:42:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed","request_id":"req-820164","duration_ms":152,"user_id":7241}
+{"timestamp":"2026-01-19T02:20:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-831461","duration_ms":163,"user_id":4082}
+{"timestamp":"2026-01-18T14:53:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused","request_id":"req-559174","duration_ms":123,"user_id":9655}
+{"timestamp":"2026-01-18T15:55:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-430306","duration_ms":140,"user_id":5928}
+{"timestamp":"2026-01-19T08:55:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-608694","duration_ms":175,"user_id":9144}
+{"timestamp":"2026-01-19T07:48:35.368786+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token at /health","request_id":"req-290192","duration_ms":99,"user_id":7623}
+{"timestamp":"2026-01-19T00:20:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s","request_id":"req-489419","duration_ms":1991,"user_id":null}
+{"timestamp":"2026-01-18T23:31:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s","request_id":"req-955437","duration_ms":186,"user_id":7517}
+{"timestamp":"2026-01-19T04:00:35.368786+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-446349","duration_ms":50,"user_id":9549}
+{"timestamp":"2026-01-19T08:13:35.368786+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-684074","duration_ms":88,"user_id":null}
+{"timestamp":"2026-01-18T14:43:35.368786+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted","request_id":"req-615645","duration_ms":111,"user_id":7241}
+{"timestamp":"2026-01-18T23:05:35.368786+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-824984","duration_ms":54,"user_id":9144}
+{"timestamp":"2026-01-18T14:24:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-337629","duration_ms":162,"user_id":4556}
+{"timestamp":"2026-01-19T03:43:35.368786+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-346039","duration_ms":177,"user_id":5210}
+{"timestamp":"2026-01-18T11:01:35.368786+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-659667","duration_ms":72,"user_id":2125}
+{"timestamp":"2026-01-19T08:24:35.368786+00:00","level":"ERROR","service":"auth-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-535232","duration_ms":24,"user_id":8233}
+{"timestamp":"2026-01-19T07:48:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s at /api/v1/users","request_id":"req-426530","duration_ms":1697,"user_id":8233}
+{"timestamp":"2026-01-18T10:20:35.368786+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-903876","duration_ms":1696,"user_id":2797}
+{"timestamp":"2026-01-19T03:24:35.368786+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-905770","duration_ms":104,"user_id":2978}
+{"timestamp":"2026-01-18T22:51:35.368786+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-374152","duration_ms":71,"user_id":7257}
+{"timestamp":"2026-01-18T11:28:35.368786+00:00","level":"ERROR","service":"payment-service","message":"SSL certificate expires in 16 days at /api/v1/orders","request_id":"req-614669","duration_ms":12,"user_id":9144}
+{"timestamp":"2026-01-18T16:25:35.368786+00:00","level":"ERROR","service":"user-service","message":"Timeout after 43s","request_id":"req-463839","duration_ms":58,"user_id":5818}
+{"timestamp":"2026-01-19T04:42:35.368786+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-413242","duration_ms":68,"user_id":7774}
+{"timestamp":"2026-01-18T14:08:35.368786+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-952667","duration_ms":185,"user_id":8750}
+{"timestamp":"2026-01-18T13:03:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-718458","duration_ms":39,"user_id":null}
+{"timestamp":"2026-01-18T14:07:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-151372","duration_ms":67,"user_id":9797}
+{"timestamp":"2026-01-19T00:20:35.368786+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-447504","duration_ms":153,"user_id":null}
+{"timestamp":"2026-01-18T13:47:35.368786+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error at /metrics","request_id":"req-744252","duration_ms":69,"user_id":5076}
+{"timestamp":"2026-01-18T20:41:35.368786+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-841588","duration_ms":110,"user_id":9269}
+{"timestamp":"2026-01-19T02:02:35.368786+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted at /metrics","request_id":"req-969751","duration_ms":177,"user_id":9655}
+{"timestamp":"2026-01-19T09:52:35.368786+00:00","level":"ERROR","service":"user-service","message":"Memory limit exceeded: 1718MB","request_id":"req-354131","duration_ms":49,"user_id":9376}
+{"timestamp":"2026-01-18T20:57:35.368786+00:00","level":"WARNING","service":"api-gateway","message":"Load balancer health check failed","request_id":"req-736402","duration_ms":99,"user_id":9655}
+{"timestamp":"2026-01-18T13:57:35.368786+00:00","level":"ERROR","service":"user-service","message":"CPU throttling at 83%","request_id":"req-352538","duration_ms":195,"user_id":9376}
+{"timestamp":"2026-01-18T14:21:35.368786+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-998925","duration_ms":103,"user_id":9269}
+{"timestamp":"2026-01-19T03:25:35.368786+00:00","level":"ERROR","service":"payment-service","message":"HTTP 500 from upstream","request_id":"req-178087","duration_ms":193,"user_id":3862}
+{"timestamp":"2026-01-19T03:26:35.368786+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-586348","duration_ms":39,"user_id":2921}
+{"timestamp":"2026-01-19T00:48:35.368786+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-282625","duration_ms":39,"user_id":2058}
+{"timestamp":"2026-01-19T05:31:35.368786+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted at /api/v1/orders","request_id":"req-796128","duration_ms":121,"user_id":null}
+{"timestamp":"2026-01-18T19:50:35.368786+00:00","level":"ERROR","service":"user-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-577769","duration_ms":170,"user_id":null}
+{"timestamp":"2026-01-19T02:36:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-488857","duration_ms":91,"user_id":null}
+{"timestamp":"2026-01-18T22:03:35.368786+00:00","level":"WARNING","service":"payment-service","message":"Duplicate transaction detected","request_id":"req-907220","duration_ms":17,"user_id":null}
+{"timestamp":"2026-01-18T19:30:35.368786+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-298906","duration_ms":10,"user_id":7541}
+{"timestamp":"2026-01-18T22:42:35.368786+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-829402","duration_ms":1150,"user_id":null}
+{"timestamp":"2026-01-18T15:18:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /health","request_id":"req-327037","duration_ms":10,"user_id":7568}
+{"timestamp":"2026-01-19T04:23:35.368786+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-284039","duration_ms":153,"user_id":6187}
+{"timestamp":"2026-01-18T18:28:35.368786+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token","request_id":"req-247957","duration_ms":115,"user_id":7257}
+{"timestamp":"2026-01-19T03:24:35.368786+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-406074","duration_ms":38,"user_id":null}
+{"timestamp":"2026-01-18T10:48:35.368786+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-178656","duration_ms":119,"user_id":null}
+{"timestamp":"2026-01-19T06:14:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Memory limit exceeded: 1718MB","request_id":"req-795998","duration_ms":50,"user_id":null}
+{"timestamp":"2026-01-18T14:20:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service at /api/v1/users","request_id":"req-770438","duration_ms":153,"user_id":3337}
+{"timestamp":"2026-01-18T23:52:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed at /api/v2/products","request_id":"req-477600","duration_ms":106,"user_id":3184}
+{"timestamp":"2026-01-19T06:39:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch at /api/v1/orders","request_id":"req-436409","duration_ms":185,"user_id":null}
+{"timestamp":"2026-01-18T17:01:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation at /api/v1/orders","request_id":"req-663860","duration_ms":70,"user_id":9797}
+{"timestamp":"2026-01-19T03:27:35.368786+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token at /api/v2/products","request_id":"req-722708","duration_ms":34,"user_id":2797}
+{"timestamp":"2026-01-18T21:44:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened","request_id":"req-296251","duration_ms":2636,"user_id":null}
+{"timestamp":"2026-01-19T01:36:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s","request_id":"req-771605","duration_ms":47,"user_id":3184}
+{"timestamp":"2026-01-18T11:51:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-353736","duration_ms":187,"user_id":8233}
+{"timestamp":"2026-01-19T02:35:35.368786+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-517347","duration_ms":35,"user_id":null}
+{"timestamp":"2026-01-18T14:32:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused at /metrics","request_id":"req-883268","duration_ms":130,"user_id":7774}
+{"timestamp":"2026-01-19T09:43:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Bulk update failed: constraint violation","request_id":"req-293756","duration_ms":120,"user_id":4556}
+{"timestamp":"2026-01-18T10:47:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-530477","duration_ms":21,"user_id":9655}
+{"timestamp":"2026-01-19T02:11:35.368786+00:00","level":"ERROR","service":"auth-service","message":"SSL certificate expires in 16 days at /health","request_id":"req-278649","duration_ms":99,"user_id":7517}
+{"timestamp":"2026-01-18T12:14:35.368786+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-610603","duration_ms":164,"user_id":null}
+{"timestamp":"2026-01-19T09:59:35.368786+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted at /api/v1/orders","request_id":"req-998869","duration_ms":94,"user_id":null}
+{"timestamp":"2026-01-18T11:32:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 60s","request_id":"req-184589","duration_ms":29,"user_id":7568}
+{"timestamp":"2026-01-19T02:35:35.368786+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch","request_id":"req-187173","duration_ms":133,"user_id":7623}
+{"timestamp":"2026-01-18T22:34:35.368786+00:00","level":"ERROR","service":"user-service","message":"Email validation failed at /api/v1/users","request_id":"req-991506","duration_ms":30,"user_id":6187}
+{"timestamp":"2026-01-18T17:38:35.368786+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token at /metrics","request_id":"req-496916","duration_ms":16,"user_id":7517}
+{"timestamp":"2026-01-19T09:05:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /api/v1/users","request_id":"req-252471","duration_ms":57,"user_id":4082}
+{"timestamp":"2026-01-18T12:31:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Queue depth exceeded: 9775 pending","request_id":"req-577108","duration_ms":76,"user_id":9797}
+{"timestamp":"2026-01-19T04:18:35.368786+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-764422","duration_ms":186,"user_id":7774}
+{"timestamp":"2026-01-19T00:50:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-787455","duration_ms":135,"user_id":8233}
+{"timestamp":"2026-01-19T07:03:35.368786+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-344416","duration_ms":178,"user_id":5210}
+{"timestamp":"2026-01-18T22:51:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance at /health","request_id":"req-925270","duration_ms":150,"user_id":4765}
+{"timestamp":"2026-01-18T12:17:35.368786+00:00","level":"INFO","service":"api-gateway","message":"Request routed","request_id":"req-584436","duration_ms":14,"user_id":2058}
+{"timestamp":"2026-01-18T11:46:35.368786+00:00","level":"ERROR","service":"user-service","message":"User not found at /api/v1/orders","request_id":"req-459161","duration_ms":127,"user_id":5818}
+{"timestamp":"2026-01-18T15:28:35.368786+00:00","level":"ERROR","service":"user-service","message":"Email validation failed","request_id":"req-167201","duration_ms":147,"user_id":8750}
+{"timestamp":"2026-01-18T21:01:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Circuit breaker opened at /api/v1/orders","request_id":"req-202027","duration_ms":182,"user_id":4765}
+{"timestamp":"2026-01-18T19:50:35.368786+00:00","level":"INFO","service":"auth-service","message":"User login successful","request_id":"req-274657","duration_ms":102,"user_id":1035}
+{"timestamp":"2026-01-18T15:25:35.368786+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused","request_id":"req-704502","duration_ms":12,"user_id":6671}
+{"timestamp":"2026-01-18T13:05:35.368786+00:00","level":"INFO","service":"payment-service","message":"Payment processed successfully","request_id":"req-252222","duration_ms":42,"user_id":2797}
+{"timestamp":"2026-01-19T04:58:35.368786+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-985844","duration_ms":29,"user_id":9655}
+{"timestamp":"2026-01-19T08:08:35.368786+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-314061","duration_ms":196,"user_id":4765}
+{"timestamp":"2026-01-19T04:07:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed","request_id":"req-752036","duration_ms":66,"user_id":null}
+{"timestamp":"2026-01-19T07:11:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable at /health","request_id":"req-819854","duration_ms":76,"user_id":2058}
+{"timestamp":"2026-01-19T04:43:35.368786+00:00","level":"ERROR","service":"user-service","message":"Disk space critical: 92% used at /api/v2/products","request_id":"req-236547","duration_ms":192,"user_id":5818}
+{"timestamp":"2026-01-19T04:16:35.368786+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-493023","duration_ms":52,"user_id":9079}
+{"timestamp":"2026-01-19T04:32:35.368786+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-939722","duration_ms":25,"user_id":7623}
+{"timestamp":"2026-01-18T11:27:35.368786+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable at /api/v2/products","request_id":"req-391713","duration_ms":135,"user_id":4765}
+{"timestamp":"2026-01-19T05:04:35.368786+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-447779","duration_ms":161,"user_id":2758}
+{"timestamp":"2026-01-18T19:29:35.368786+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-769809","duration_ms":126,"user_id":4556}
+{"timestamp":"2026-01-18T22:38:35.369788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-332768","duration_ms":21,"user_id":null}
+{"timestamp":"2026-01-18T12:19:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: timeout","request_id":"req-969651","duration_ms":20,"user_id":7623}
+{"timestamp":"2026-01-19T05:37:35.369788+00:00","level":"ERROR","service":"user-service","message":"HTTP 500 from upstream at /metrics","request_id":"req-328758","duration_ms":191,"user_id":4191}
+{"timestamp":"2026-01-18T18:03:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: payment-service","request_id":"req-305392","duration_ms":105,"user_id":6113}
+{"timestamp":"2026-01-18T22:44:35.369788+00:00","level":"ERROR","service":"user-service","message":"User not found","request_id":"req-717787","duration_ms":22,"user_id":4648}
+{"timestamp":"2026-01-18T16:13:35.369788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error at /health","request_id":"req-683602","duration_ms":68,"user_id":2020}
+{"timestamp":"2026-01-18T10:55:35.369788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-292513","duration_ms":23,"user_id":2058}
+{"timestamp":"2026-01-18T13:04:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service","request_id":"req-323718","duration_ms":176,"user_id":5076}
+{"timestamp":"2026-01-19T04:34:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-265536","duration_ms":131,"user_id":6671}
+{"timestamp":"2026-01-18T19:21:35.369788+00:00","level":"ERROR","service":"user-service","message":"Database connection pool exhausted at /api/v2/products","request_id":"req-884729","duration_ms":75,"user_id":8233}
+{"timestamp":"2026-01-18T16:52:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed at /api/v1/orders","request_id":"req-943612","duration_ms":115,"user_id":3778}
+{"timestamp":"2026-01-18T18:15:35.369788+00:00","level":"ERROR","service":"payment-service","message":"HTTP 500 from upstream","request_id":"req-484325","duration_ms":95,"user_id":3778}
+{"timestamp":"2026-01-19T02:07:35.369788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-514716","duration_ms":155,"user_id":7774}
+{"timestamp":"2026-01-19T03:40:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Connection refused to port 6497","request_id":"req-312204","duration_ms":48,"user_id":null}
+{"timestamp":"2026-01-18T22:44:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s at /api/v2/products","request_id":"req-571492","duration_ms":49,"user_id":3778}
+{"timestamp":"2026-01-18T19:05:35.369788+00:00","level":"ERROR","service":"user-service","message":"Password hash mismatch at /health","request_id":"req-876215","duration_ms":23,"user_id":1365}
+{"timestamp":"2026-01-19T02:23:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v2/products","request_id":"req-142406","duration_ms":134,"user_id":1035}
+{"timestamp":"2026-01-18T22:51:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service at /health","request_id":"req-447832","duration_ms":161,"user_id":null}
+{"timestamp":"2026-01-18T13:41:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance at /health","request_id":"req-714910","duration_ms":94,"user_id":7568}
+{"timestamp":"2026-01-19T08:08:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive at /metrics","request_id":"req-666574","duration_ms":158,"user_id":4556}
+{"timestamp":"2026-01-18T20:58:35.369788+00:00","level":"WARNING","service":"auth-service","message":"Session expired","request_id":"req-770526","duration_ms":163,"user_id":4765}
+{"timestamp":"2026-01-18T10:53:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Disk space critical: 92% used","request_id":"req-622233","duration_ms":165,"user_id":null}
+{"timestamp":"2026-01-19T02:46:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-356948","duration_ms":156,"user_id":5527}
+{"timestamp":"2026-01-18T22:41:35.369788+00:00","level":"WARNING","service":"inventory-service","message":"Item out of stock","request_id":"req-353276","duration_ms":171,"user_id":6671}
+{"timestamp":"2026-01-19T01:02:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Timeout after 43s at /health","request_id":"req-325506","duration_ms":187,"user_id":3184}
+{"timestamp":"2026-01-19T05:50:35.369788+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-253587","duration_ms":179,"user_id":7517}
+{"timestamp":"2026-01-18T13:57:35.369788+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-647356","duration_ms":128,"user_id":2921}
+{"timestamp":"2026-01-18T19:50:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch at /api/v2/products","request_id":"req-447775","duration_ms":43,"user_id":4796}
+{"timestamp":"2026-01-19T00:00:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Memory limit exceeded: 1718MB at /api/v1/orders","request_id":"req-719215","duration_ms":63,"user_id":9655}
+{"timestamp":"2026-01-18T12:39:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Payment gateway timeout after 30s at /health","request_id":"req-547301","duration_ms":79,"user_id":4556}
+{"timestamp":"2026-01-18T23:04:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost at /api/v2/products","request_id":"req-772324","duration_ms":195,"user_id":null}
+{"timestamp":"2026-01-18T15:04:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-146154","duration_ms":64,"user_id":2125}
+{"timestamp":"2026-01-18T20:50:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-178316","duration_ms":172,"user_id":2978}
+{"timestamp":"2026-01-18T22:31:35.369788+00:00","level":"DEBUG","service":"user-service","message":"Cache miss for user profile","request_id":"req-730059","duration_ms":41,"user_id":null}
+{"timestamp":"2026-01-19T08:03:35.369788+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature at /api/v1/orders","request_id":"req-972726","duration_ms":40,"user_id":null}
+{"timestamp":"2026-01-18T11:16:35.369788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-421077","duration_ms":55,"user_id":null}
+{"timestamp":"2026-01-19T01:47:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Timeout after 43s","request_id":"req-773584","duration_ms":126,"user_id":3778}
+{"timestamp":"2026-01-19T09:05:35.369788+00:00","level":"WARNING","service":"payment-service","message":"Insufficient funds for transaction","request_id":"req-934947","duration_ms":142,"user_id":6671}
+{"timestamp":"2026-01-19T08:09:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Currency conversion failed","request_id":"req-963859","duration_ms":4546,"user_id":4765}
+{"timestamp":"2026-01-19T09:09:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive","request_id":"req-278415","duration_ms":141,"user_id":5129}
+{"timestamp":"2026-01-19T00:51:35.369788+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: expired token","request_id":"req-974334","duration_ms":189,"user_id":null}
+{"timestamp":"2026-01-18T14:16:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Stripe API connection refused at /metrics","request_id":"req-484987","duration_ms":28,"user_id":1365}
+{"timestamp":"2026-01-19T04:31:35.369788+00:00","level":"WARNING","service":"user-service","message":"Account locked: too many attempts","request_id":"req-465756","duration_ms":95,"user_id":8750}
+{"timestamp":"2026-01-18T17:19:35.369788+00:00","level":"INFO","service":"auth-service","message":"Password reset requested","request_id":"req-735090","duration_ms":149,"user_id":5818}
+{"timestamp":"2026-01-18T14:43:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Connection refused to port 6497","request_id":"req-675001","duration_ms":155,"user_id":1365}
+{"timestamp":"2026-01-18T14:20:35.369788+00:00","level":"INFO","service":"user-service","message":"Avatar uploaded","request_id":"req-891825","duration_ms":99,"user_id":2020}
+{"timestamp":"2026-01-19T00:26:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Disk space critical: 92% used","request_id":"req-419772","duration_ms":70,"user_id":2058}
+{"timestamp":"2026-01-19T06:38:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable at /api/v2/products","request_id":"req-672041","duration_ms":99,"user_id":null}
+{"timestamp":"2026-01-19T05:53:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"SSL handshake failed","request_id":"req-933895","duration_ms":127,"user_id":4082}
+{"timestamp":"2026-01-18T18:05:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Request timeout: upstream unresponsive at /health","request_id":"req-288046","duration_ms":59,"user_id":3862}
+{"timestamp":"2026-01-18T18:23:35.369788+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-819682","duration_ms":86,"user_id":2758}
+{"timestamp":"2026-01-18T22:45:35.369788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-318048","duration_ms":75,"user_id":9269}
+{"timestamp":"2026-01-19T02:45:35.369788+00:00","level":"INFO","service":"user-service","message":"Profile updated","request_id":"req-691163","duration_ms":132,"user_id":2058}
+{"timestamp":"2026-01-18T19:02:35.369788+00:00","level":"INFO","service":"inventory-service","message":"Stock checked","request_id":"req-520863","duration_ms":138,"user_id":2058}
+{"timestamp":"2026-01-19T05:56:35.369788+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-336207","duration_ms":182,"user_id":7774}
+{"timestamp":"2026-01-19T02:16:35.369788+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token at /api/v2/products","request_id":"req-196093","duration_ms":121,"user_id":null}
+{"timestamp":"2026-01-19T03:09:35.369788+00:00","level":"ERROR","service":"auth-service","message":"OAuth callback error","request_id":"req-634205","duration_ms":22,"user_id":2125}
+{"timestamp":"2026-01-19T06:12:35.369788+00:00","level":"ERROR","service":"auth-service","message":"Token validation failed: invalid signature","request_id":"req-915846","duration_ms":30,"user_id":3184}
+{"timestamp":"2026-01-18T16:06:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"DNS resolution failed","request_id":"req-990977","duration_ms":53,"user_id":7369}
+{"timestamp":"2026-01-18T15:47:35.369788+00:00","level":"ERROR","service":"user-service","message":"Connection refused to port 6497","request_id":"req-436484","duration_ms":151,"user_id":4082}
+{"timestamp":"2026-01-19T02:08:35.369788+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-767167","duration_ms":54,"user_id":3778}
+{"timestamp":"2026-01-19T05:45:35.369788+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-354779","duration_ms":167,"user_id":4191}
+{"timestamp":"2026-01-19T04:18:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Connection refused to port 6497","request_id":"req-290089","duration_ms":168,"user_id":null}
+{"timestamp":"2026-01-19T07:28:35.369788+00:00","level":"ERROR","service":"api-gateway","message":"Service unavailable: auth-service at /api/v1/users","request_id":"req-242119","duration_ms":157,"user_id":2758}
+{"timestamp":"2026-01-19T03:54:35.369788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-261032","duration_ms":148,"user_id":2949}
+{"timestamp":"2026-01-18T21:43:35.369788+00:00","level":"WARNING","service":"api-gateway","message":"Rate limit exceeded","request_id":"req-900635","duration_ms":194,"user_id":4556}
+{"timestamp":"2026-01-18T11:16:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Redis cache connection lost","request_id":"req-183829","duration_ms":50,"user_id":1365}
+{"timestamp":"2026-01-18T20:14:35.369788+00:00","level":"ERROR","service":"auth-service","message":"JWT decode error: malformed token","request_id":"req-636559","duration_ms":11,"user_id":9491}
+{"timestamp":"2026-01-18T12:56:35.369788+00:00","level":"ERROR","service":"payment-service","message":"Card declined: insufficient balance","request_id":"req-588160","duration_ms":160,"user_id":2020}
+{"timestamp":"2026-01-19T04:50:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Warehouse API unavailable","request_id":"req-845067","duration_ms":128,"user_id":8233}
+{"timestamp":"2026-01-18T16:15:35.369788+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-989349","duration_ms":27,"user_id":9655}
+{"timestamp":"2026-01-18T13:53:35.369788+00:00","level":"INFO","service":"payment-service","message":"Refund initiated","request_id":"req-719440","duration_ms":2221,"user_id":null}
+{"timestamp":"2026-01-18T10:47:35.369788+00:00","level":"WARNING","service":"inventory-service","message":"Stock reservation expired","request_id":"req-333984","duration_ms":153,"user_id":null}
+{"timestamp":"2026-01-18T11:35:35.369788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed","request_id":"req-415382","duration_ms":58,"user_id":7241}
+{"timestamp":"2026-01-18T18:49:35.369788+00:00","level":"ERROR","service":"auth-service","message":"MFA verification failed at /health","request_id":"req-673641","duration_ms":113,"user_id":5129}
+{"timestamp":"2026-01-18T22:48:35.369788+00:00","level":"WARNING","service":"auth-service","message":"Invalid credentials for user","request_id":"req-722854","duration_ms":74,"user_id":9549}
+{"timestamp":"2026-01-18T12:55:35.369788+00:00","level":"ERROR","service":"inventory-service","message":"Inventory sync failed: data mismatch","request_id":"req-956122","duration_ms":148,"user_id":5129}
