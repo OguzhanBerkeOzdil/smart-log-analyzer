@@ -26,6 +26,10 @@ if "ai_insights" not in st.session_state:
     st.session_state.ai_insights = None
 if "provider_name" not in st.session_state:
     st.session_state.provider_name = None
+if "ai_processing_time" not in st.session_state:
+    st.session_state.ai_processing_time = None
+if "uploaded_file_name" not in st.session_state:
+    st.session_state.uploaded_file_name = None
 
 # CSS
 st.markdown(
@@ -48,16 +52,21 @@ def run_analysis(log_path: Path) -> dict[str, Any]:
 
 def get_ai_insights_for_errors(
     errors: list[ErrorGroup], provider_type: LLMProvider
-) -> list[dict[str, Any]]:
-    """Get AI insights for multiple errors using selected LLM."""
+) -> tuple[list[dict[str, Any]], float]:
+    """Get AI insights for multiple errors using selected LLM.
+
+    Returns:
+        Tuple of (insights list, processing time in seconds)
+    """
     if provider_type == LLMProvider.NONE:
-        return []
+        return [], 0.0
 
     provider = get_provider(provider_type)
     if not provider:
-        return []
+        return [], 0.0
 
-    insights = []
+    start_time = time.time()
+    insights: list[dict[str, Any]] = []
     for error in errors[:5]:  # Top 5 errors
         insight = provider.get_insight(error)
         insights.append(
@@ -67,7 +76,8 @@ def get_ai_insights_for_errors(
                 "provider": provider.name,
             }
         )
-    return insights
+    processing_time = time.time() - start_time
+    return insights, processing_time
 
 
 def main() -> None:
@@ -116,13 +126,16 @@ def main() -> None:
         elif source == "Upload":
             uploaded = st.file_uploader("Upload JSONL:", type=["jsonl"])
             if uploaded:
-                path = Path(f"data/upload_{int(time.time())}.jsonl")
-                path.parent.mkdir(exist_ok=True)
-                path.write_bytes(uploaded.getvalue())
-                st.session_state.log_path = path
-                st.session_state.results = None
-                st.session_state.ai_insights = None
-                st.rerun()
+                # Only process if it's a new file
+                if st.session_state.uploaded_file_name != uploaded.name:
+                    path = Path(f"data/upload_{uploaded.name}")
+                    path.parent.mkdir(exist_ok=True)
+                    path.write_bytes(uploaded.getvalue())
+                    st.session_state.log_path = path
+                    st.session_state.uploaded_file_name = uploaded.name
+                    st.session_state.results = None
+                    st.session_state.ai_insights = None
+                    st.rerun()
 
         else:  # Sample
             sample = Path("data/sample_logs.jsonl")
@@ -161,12 +174,15 @@ def main() -> None:
                         with st.spinner(
                             f"🤖 Getting AI insights from {selected_ai}..."
                         ):
-                            st.session_state.ai_insights = get_ai_insights_for_errors(
+                            insights, proc_time = get_ai_insights_for_errors(
                                 error_result["top_errors"], provider_type
                             )
+                            st.session_state.ai_insights = insights
+                            st.session_state.ai_processing_time = proc_time
                             st.session_state.provider_name = selected_ai
                     else:
                         st.session_state.ai_insights = None
+                        st.session_state.ai_processing_time = None
                         st.session_state.provider_name = None
 
             st.rerun()
@@ -184,8 +200,18 @@ def main() -> None:
             c1.metric("🔴 Total Errors", error_result["total_errors"])
             c2.metric("🔶 Unique Errors", error_result["unique_errors"])
             if perf_result:
-                c3.metric("⏱️ Avg Duration", f"{perf_result['average_duration_ms']} ms")
+                c3.metric(
+                    "⏱️ Avg Log Duration", f"{perf_result['average_duration_ms']} ms"
+                )
                 c4.metric("📊 Requests", perf_result["total_requests_with_duration"])
+
+            # Show AI processing time if available
+            if st.session_state.ai_processing_time is not None:
+                c5 = st.columns(1)[0]
+                c5.metric(
+                    "🤖 AI Processing",
+                    f"{st.session_state.ai_processing_time:.2f}s",
+                )
 
         # Results display based on mode
         if st.session_state.ai_insights:
