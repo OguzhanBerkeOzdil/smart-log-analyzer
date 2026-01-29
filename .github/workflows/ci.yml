@@ -39,5 +39,5 @@ jobs:
       - name: Check Types (Pyright)
         run: uv run pyright
 
-      - name: Run Tests
-        run: uv run pytest -v
+      - name: Run Tests with Coverage
+        run: uv run pytest -v --cov=smart_log_analyzer --cov-report=term-missing --cov-fail-under=80
